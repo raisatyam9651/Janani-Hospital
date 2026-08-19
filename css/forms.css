@@ -1,0 +1,628 @@
+/* ==========================================================================
+   forms.css — Book Appointment, Book a Lab Test, Health Packages
+   ========================================================================== */
+
+/* ==========================================================================
+   BOOK APPOINTMENT  (src/pages/BookAppointment.jsx)
+   ========================================================================== */
+.appt {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid var(--gray-100);
+  border-radius: 3rem;
+  box-shadow: var(--shadow-2xl);
+}
+
+.appt__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .appt__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .appt__aside {
+    grid-column: span 2 / span 2;
+  }
+  .appt__form-col {
+    grid-column: span 3 / span 3;
+  }
+}
+
+.appt__aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 3rem;
+  color: #ffffff;
+  background-color: var(--emerald-600);
+}
+
+.appt__aside-inner {
+  position: relative;
+  z-index: 10;
+}
+
+.appt__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.appt__lede {
+  margin-bottom: 3rem;
+  line-height: 1.625;
+  color: var(--emerald-50);
+  opacity: 0.9;
+}
+
+.appt__points {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.appt__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.appt__point-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-xl);
+}
+
+.appt__point-icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.appt__point-title {
+  font-weight: 700;
+}
+
+.appt__point-sub {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--emerald-100);
+}
+
+.appt__hotline {
+  position: relative;
+  z-index: 10;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-3xl);
+}
+
+.appt__hotline-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a7f3d0;
+}
+
+.appt__hotline-number {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.appt__orb {
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  border-radius: var(--radius-full);
+  filter: blur(64px);
+}
+
+.appt__orb--a {
+  top: -3rem;
+  right: -3rem;
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.appt__orb--b {
+  bottom: -3rem;
+  left: -3rem;
+  background-color: rgb(0 0 0 / 0.1);
+}
+
+.appt__form-col {
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .appt__form-col {
+    padding: 3rem;
+  }
+}
+
+.appt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appt-form__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .appt-form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* `space-y-2` on a block container: the inline-block input/textarea keeps its
+   baseline descender space, which a flex column would remove. */
+.appt-field > * + * {
+  margin-top: 0.5rem;
+}
+
+.appt-field__label {
+  display: flex;
+  align-items: center;
+  margin-left: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-700);
+}
+
+.appt-field__label .icon {
+  margin-right: 0.5rem;
+  color: var(--emerald-600);
+}
+
+.appt-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--gray-700);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+  transition: all 150ms var(--ease);
+}
+
+.appt-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--emerald-500);
+}
+
+select.appt-input {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea.appt-input {
+  resize: none;
+}
+
+.appt-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-block: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--gray-900);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  transition: all 150ms var(--ease);
+}
+
+.appt-submit:hover {
+  background-color: var(--emerald-600);
+}
+
+.appt-submit .icon {
+  transition: transform 150ms var(--ease);
+}
+
+.appt-submit:hover .icon {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   BOOK A LAB TEST  (src/pages/BookLabTest.jsx)
+   ========================================================================== */
+.lab {
+  padding-top: 6rem;
+  min-height: 100vh;
+  background-color: var(--gray-50);
+}
+
+.lab__card {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.lab__head {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lab__title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.lab__lede {
+  margin-top: 0.5rem;
+  color: var(--gray-600);
+}
+
+.lab-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lab-label {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.lab-control {
+  position: relative;
+  margin-top: 0.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.lab-control__icon {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  pointer-events: none;
+  color: var(--gray-400);
+}
+
+/* Tailwind Preflight zeroes border-width, and the original only ever sets a
+   border *colour* here — so these controls render without a visible border. */
+.lab-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border-color: var(--gray-300);
+  border-radius: var(--radius-md);
+}
+
+.lab-input:focus {
+  outline: none;
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 1px var(--teal-500);
+}
+
+.lab-select {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-color: var(--gray-300);
+  border-radius: var(--radius-md);
+}
+
+.lab-select:focus {
+  outline: none;
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 1px var(--teal-500);
+}
+
+@media (min-width: 640px) {
+  .lab-input,
+  .lab-select {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.lab-submit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.lab-submit:hover {
+  background-color: var(--teal-700);
+}
+
+.lab-submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--teal-500);
+}
+
+.lab-submit .icon {
+  margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   HEALTH PACKAGES  (src/pages/MembershipHealthCart.jsx)
+   ========================================================================== */
+.packages-page {
+  padding-top: 4rem;
+}
+
+.packages {
+  padding-block: 4rem;
+  background-color: var(--gray-50);
+}
+
+.packages__head {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.packages__title {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.packages__lede {
+  max-width: 48rem;
+  margin-inline: auto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--gray-600);
+}
+
+.packages__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .packages__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .packages__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.pkg {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  transition: all 300ms var(--ease);
+}
+
+.pkg:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.pkg__badge-wrap {
+  position: relative;
+}
+
+.pkg__badge {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.pkg__head {
+  padding: 1.5rem;
+  color: #ffffff;
+  background-image: linear-gradient(to right, var(--pkg-from), var(--pkg-to));
+}
+
+.pkg__name {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.pkg__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pkg__price {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.pkg__was {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.pkg__off {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  background-color: rgb(255 255 255 / 0.2);
+  border-radius: var(--radius-full);
+}
+
+.pkg__body {
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.pkg__body h4 {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.pkg__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pkg__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.pkg__item .icon {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--teal-600);
+}
+
+.pkg__item span {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--gray-700);
+}
+
+.pkg__foot {
+  padding: 1.5rem;
+  background-color: var(--gray-50);
+}
+
+.pkg__select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-block: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  background-color: var(--gray-200);
+  border-radius: var(--radius-lg);
+  transition: all 300ms var(--ease);
+}
+
+.pkg__select:hover {
+  color: #ffffff;
+  background-color: var(--teal-500);
+}
+
+.pkg.is-selected .pkg__select,
+.pkg.is-selected .pkg__select:hover {
+  color: #ffffff;
+  background-color: var(--teal-600);
+}
+
+/* Booking panel revealed once a package is picked */
+.pkg-booking {
+  display: none;
+  padding-block: 4rem;
+  background-color: #ffffff;
+}
+
+.pkg-booking.is-visible {
+  display: block;
+}
+
+.pkg-booking__inner {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.pkg-booking__card {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  background-color: var(--gray-50);
+  border-radius: var(--radius-2xl);
+}
+
+.pkg-booking__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.pkg-booking__lede {
+  color: var(--gray-600);
+}
+
+.pkg-booking__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pkg-booking__submit {
+  width: 100%;
+  padding-block: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-radius: var(--radius-lg);
+  transition: background-color 300ms var(--ease);
+}
+
+.pkg-booking__submit:hover {
+  background-color: var(--teal-700);
+}

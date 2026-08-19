@@ -1,0 +1,576 @@
+{
+ "pediatrics": {
+  "heroIcon": "alert-triangle",
+  "heroSubtitle": "Leading Child Care Center in Hyderabad",
+  "whyHeading": "Why Choose Our Paediatrics Department?",
+  "contactTitle": "Contact Paediatrics Dept.",
+  "contactSubtitle": "We're here to help your child",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Child Healthcare",
+   "What Parents Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From routine check-ups to specialized pediatric care, we offer complete healthcare services for children of all ages.",
+   "Real stories from families who trusted us with their children's care.",
+   "Find answers to common questions about our pediatric services and child healthcare"
+  ],
+  "stillLead": "Our pediatric experts are here to help you with personalized guidance for your child",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for existing patients",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "obg": {
+  "heroIcon": "alert-triangle",
+  "heroSubtitle": "Comprehensive Women's Healthcare",
+  "whyHeading": "Why Choose Our OBG Department?",
+  "contactTitle": "Contact OBG Department",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Women's Healthcare",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From pregnancy care to gynecological treatments, we provide complete women's health services with expert care.",
+   "Real stories from mothers and women who experienced exceptional care with our OBG team.",
+   "Find answers to common questions about our obstetrics and gynecology services"
+  ],
+  "stillLead": "Our women's health specialists are here to help you with personalized guidance",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for maternity care",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "surgery": {
+  "heroIcon": "scissors",
+  "heroSubtitle": "Excellence in Surgical Care",
+  "whyHeading": "Why Choose Our Surgery Department?",
+  "contactTitle": "Contact Surgery Dept.",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Surgical Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From routine procedures to complex surgeries, we offer advanced surgical care with minimally invasive techniques.",
+   "Real stories from patients who experienced excellent surgical care with us.",
+   "Find answers to common questions about our surgical services and procedures"
+  ],
+  "stillLead": "Our surgical experts are here to help you with personalized consultation and guidance",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for existing patients",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "ortho": {
+  "heroIcon": "alert-triangle",
+  "heroSubtitle": "Leading Bone & Joint Care Center",
+  "whyHeading": "Why Choose Our Orthopedics Department?",
+  "contactTitle": "Contact Orthopedics",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Orthopedic Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From joint replacement to sports medicine, we provide complete orthopedic care with advanced surgical techniques.",
+   "Real stories from patients who experienced exceptional orthopedic care with us.",
+   "Find answers to common questions about our orthopedic services and treatments"
+  ],
+  "stillLead": "Our orthopedic specialists are here to help you with personalized guidance",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for trauma cases",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "urology": {
+  "heroIcon": "droplet",
+  "heroSubtitle": "Advanced Urological Care in Hyderabad",
+  "whyHeading": "Why Choose Our Urology Department?",
+  "contactTitle": "Contact Urology Dept.",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Urological Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From kidney stones to prostate care, we provide complete urological services with advanced minimally invasive techniques.",
+   "Real stories from patients who experienced excellent urological care with us.",
+   "Find answers to common questions about our urological services and treatments"
+  ],
+  "stillLead": "Our urological experts are here to help you with personalized consultation and treatment plans",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for existing patients",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "laparoscopy": {
+  "heroIcon": "monitor",
+  "heroSubtitle": "Minimally Invasive Surgery Excellence",
+  "whyHeading": "Why Choose Laparoscopic Surgery?",
+  "contactTitle": "Contact Laparoscopy Dept.",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Advanced Laparoscopic Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "Comprehensive minimally invasive surgical solutions across multiple specialties with precision and excellent outcomes.",
+   "Real experiences from patients who chose minimally invasive surgery with us.",
+   "Find answers to common questions about laparoscopic surgery and minimally invasive procedures"
+  ],
+  "stillLead": "Our laparoscopy experts are here to help you understand the benefits of minimally invasive surgery",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for existing patients",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "neonatology": {
+  "heroIcon": "alert-triangle",
+  "heroSubtitle": "Expert Newborn & Infant Care",
+  "whyHeading": "Why Choose Our Neonatology Department?",
+  "contactTitle": "Contact NICU",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Neonatal Care",
+   "What Families Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From intensive care to developmental support, we provide complete newborn care with advanced medical expertise.",
+   "Real stories from families whose newborns received exceptional care in our NICU.",
+   "Find answers to common questions about our neonatal intensive care services"
+  ],
+  "stillLead": "Our neonatology specialists are here to help you with expert guidance for your newborn's care",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for critical newborns",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "critical-care": {
+  "heroIcon": "heart",
+  "heroSubtitle": "Life-Saving Intensive Care",
+  "whyHeading": "Why Choose Our Critical Care?",
+  "contactTitle": "Contact Critical Care",
+  "contactSubtitle": "Emergency & intensive care",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Critical Care Services",
+   "What Our Families Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From emergency trauma care to specialized ICU services, we provide life-saving critical care with advanced monitoring and support systems.",
+   "Real stories from families who experienced our critical care services during challenging times.",
+   "Find answers to common questions about our critical care services and ICU facilities"
+  ],
+  "stillLead": "Our critical care team is available 24/7 for emergencies and consultations",
+  "emergencyAccent": "red",
+  "emergencyStrong": "24/7 Critical Care",
+  "emergencyRest": "emergency support available",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "alert-triangle",
+   "label": "Emergency"
+  },
+  "railBtn2": {
+   "icon": "alert-triangle",
+   "label": "Emergency Line"
+  },
+  "ctaTitle": "Need immediate assistance?",
+  "ctaBtn2": {
+   "icon": "alert-triangle",
+   "label": "Emergency Line"
+  }
+ },
+ "anc": {
+  "heroIcon": "users",
+  "heroSubtitle": "Comprehensive Pregnancy Care",
+  "whyHeading": "Why Choose Our ANC Services?",
+  "contactTitle": "Contact ANC Department",
+  "contactSubtitle": "We're here to support you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Antenatal Care Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From early pregnancy monitoring to delivery preparation, we provide complete care for expectant mothers.",
+   "Real stories from mothers who experienced excellent care during their pregnancy journey.",
+   "Find answers to common questions about our antenatal care services"
+  ],
+  "stillLead": "Our antenatal care experts are here to help you with personalized guidance",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for expectant mothers",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "pain-clinic": {
+  "heroIcon": "zap",
+  "heroSubtitle": "Advanced Pain Relief Solutions",
+  "whyHeading": "Why Choose Our Pain Clinic?",
+  "contactTitle": "Contact Pain Clinic",
+  "contactSubtitle": "Specialized pain management",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Pain Management Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From chronic pain management to advanced interventional procedures, we provide personalized treatment plans for all types of pain conditions.",
+   "Real stories from patients who found relief from chronic pain through our specialized treatments.",
+   "Find answers to common questions about pain management treatments and procedures"
+  ],
+  "stillLead": "Our pain management specialists are here to create a personalized treatment plan for you",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "Pain Assessment",
+  "emergencyRest": "consultations available",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Ready to find pain relief?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "infertility": {
+  "heroIcon": "heart",
+  "heroSubtitle": "Your Journey to Parenthood",
+  "whyHeading": "Why Choose Our Infertility Center?",
+  "contactTitle": "Contact Infertility Center",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Infertility Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From fertility assessment to advanced treatment options, we provide complete care for your fertility journey.",
+   "Real stories from couples who achieved their dream of parenthood with our help.",
+   "Find answers to common questions about infertility treatments and services"
+  ],
+  "stillLead": "Our fertility experts are here to provide you with personalized guidance and support",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Support",
+  "emergencyRest": "available for our patients",
+  "statsVariant": "responsive",
+  "procLabel": "KEY PROCEDURES:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "endoscopy": {
+  "heroIcon": "eye",
+  "heroSubtitle": "Advanced Diagnostic Excellence",
+  "whyHeading": "Why Choose Our Endoscopy Department?",
+  "contactTitle": "Contact Endoscopy Department",
+  "contactSubtitle": "Advanced diagnostic care",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Endoscopic Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "From routine screening to advanced therapeutic procedures, we offer complete endoscopic care with state-of-the-art technology.",
+   "Real experiences from patients who received endoscopic care at our facility.",
+   "Find answers to common questions about endoscopic procedures and diagnostic services"
+  ],
+  "stillLead": "Our endoscopy specialists are here to help with personalized guidance",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Endoscopy",
+  "emergencyRest": "available for critical cases",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "hysteroscopy": {
+  "heroIcon": "eye",
+  "heroSubtitle": "Advanced Women's Healthcare",
+  "whyHeading": "Why Choose Our Hysteroscopy Services?",
+  "contactTitle": "Contact Hysteroscopy Dept.",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Advanced Hysteroscopic Services",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "Comprehensive minimally invasive procedures for women's health with precision and care.",
+   "Real experiences from women who trusted us with their healthcare needs.",
+   "Find answers to common questions about hysteroscopic procedures and women's health"
+  ],
+  "stillLead": "Our hysteroscopy experts are here to provide personalized consultation and care",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "Female-Only",
+  "emergencyRest": "comfortable environment available",
+  "statsVariant": "compact",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ },
+ "ivf": {
+  "heroIcon": "alert-triangle",
+  "heroSubtitle": "Leading Fertility Center in Hyderabad",
+  "whyHeading": "Why Choose Our IVF Center?",
+  "contactTitle": "Contact IVF Center",
+  "contactSubtitle": "We're here to help you",
+  "badges": [
+   "Our Services",
+   "Testimonials",
+   "FAQs"
+  ],
+  "h2s": [
+   "Comprehensive Fertility Services Tailored For You",
+   "What Our Patients Say",
+   "Frequently Asked Questions"
+  ],
+  "leads": [
+   "We offer a wide range of fertility treatments, from initial evaluations and fertility preservation options to advanced IVF procedures, all designed to support your unique reproductive journey.",
+   "Read heartfelt stories from families who began their fertility journey with us.",
+   "Find answers to common questions about our IVF services and fertility treatments"
+  ],
+  "stillLead": "Our fertility experts are here to help you with personalized guidance.",
+  "emergencyAccent": "teal",
+  "emergencyStrong": "24/7 Emergency Support",
+  "emergencyRest": "available for existing patients",
+  "statsVariant": "responsive",
+  "procLabel": "Key Procedures:",
+  "heroBtn2": {
+   "icon": "phone",
+   "label": "Call Now"
+  },
+  "railBtn2": {
+   "icon": "phone",
+   "label": "Call Department"
+  },
+  "ctaTitle": "Still have questions?",
+  "ctaBtn2": {
+   "icon": "phone",
+   "label": "Call Us Now"
+  }
+ }
+}

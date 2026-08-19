@@ -1,0 +1,1396 @@
+/* ==========================================================================
+   department.css — the shared department page template
+   Converted from src/pages/{Paediatrics,OBG,Surgery,Ortho,Urology,Laparoscopy,
+   Neonatology,CriticalCare,ANC,PainClinic,Infertility,Endoscopy,Hysteroscopy}.jsx
+   which all render the same markup from a per-department data object.
+   ========================================================================== */
+
+.dept-page {
+  background-color: var(--gray-50);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.dept-hero {
+  position: relative;
+  min-height: 400px;
+  height: 50vh;
+  padding-top: 6rem;
+}
+
+@media (min-width: 640px) {
+  .dept-hero {
+    height: 55vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-hero {
+    height: 60vh;
+  }
+}
+
+.dept-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dept-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.dept-hero__inner {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.dept-hero__shell {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dept-hero__shell {
+    max-width: 640px;
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-hero__shell {
+    max-width: 768px;
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dept-hero__shell {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dept-hero__shell {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .dept-hero__shell {
+    max-width: 1536px;
+  }
+}
+
+.dept-hero__content {
+  max-width: 56rem;
+  color: #ffffff;
+}
+
+.dept-hero__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .dept-hero__head {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.dept-hero__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #ffffff;
+  background-color: rgb(20 184 166 / 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgb(45 212 191 / 0.5);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 640px) {
+  .dept-hero__badge {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    border-radius: var(--radius-2xl);
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-hero__badge {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+.dept-hero__title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.dept-hero__tagline {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: var(--teal-100);
+}
+
+.dept-hero__lede {
+  max-width: 48rem;
+  font-size: 0.75rem;
+  line-height: 1.625;
+  color: rgb(255 255 255 / 0.95);
+}
+
+@media (min-width: 640px) {
+  .dept-hero__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .dept-hero__tagline {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .dept-hero__lede {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-hero__title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .dept-hero__tagline {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .dept-hero__lede {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dept-hero__title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .dept-hero__lede {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.dept-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dept-hero__actions {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.dept-hero__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: all 150ms var(--ease);
+}
+
+.dept-hero__btn .icon {
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dept-hero__btn {
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .dept-hero__btn .icon {
+    font-size: 1.125rem;
+  }
+}
+
+.dept-hero__btn--primary {
+  color: var(--teal-700);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-lg);
+}
+
+.dept-hero__btn--primary:hover {
+  background-color: var(--teal-50);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-0.125rem);
+}
+
+.dept-hero__btn--ghost {
+  color: #ffffff;
+  background-color: rgb(220 38 38 / 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgb(255 255 255 / 0.3);
+}
+
+.dept-hero__btn--ghost:hover {
+  background-color: rgb(220 38 38 / 0.3);
+}
+
+/* ==========================================================================
+   OVERVIEW STATS BAR
+   Two variants exist in the original: the newer responsive one and an older
+   fixed-size one still used by the OBG-family pages.
+   ========================================================================== */
+.dept-stats-bar {
+  position: relative;
+  z-index: 10;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dept-stats-bar {
+    margin-top: -4rem;
+  }
+}
+
+.dept-stats-bar__card {
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 640px) {
+  .dept-stats-bar__card {
+    padding: 1.5rem;
+    border-radius: var(--radius-2xl);
+  }
+}
+
+.dept-stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .dept-stats-bar__grid {
+    row-gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-stats-bar__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.dept-stat-cell {
+  text-align: center;
+  padding-inline: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .dept-stat-cell {
+    padding-inline: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dept-stat-cell + .dept-stat-cell {
+    border-left: 1px solid var(--gray-200);
+  }
+}
+
+.dept-stat-cell__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--teal-600);
+  background-color: var(--teal-50);
+  border-radius: var(--radius-full);
+}
+
+@media (min-width: 640px) {
+  .dept-stat-cell__icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.dept-stat-cell__value {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+@media (min-width: 640px) {
+  .dept-stat-cell__value {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.dept-stat-cell__label {
+  margin-top: 0.25rem;
+  /* `text-[10px]` is an arbitrary value: it sets font-size only, so the
+     inherited 1.5 line-height still applies here. */
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+}
+
+@media (min-width: 640px) {
+  .dept-stat-cell__label {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+/* The OBG-family pages kept an earlier, non-responsive version of this bar. */
+.dept-stats-bar--compact {
+  margin-top: -4rem;
+}
+
+.dept-stats-bar--compact .dept-stats-bar__card {
+  padding: 1.5rem;
+  border-radius: var(--radius-2xl);
+}
+
+.dept-stats-bar--compact .dept-stats-bar__grid {
+  column-gap: 0;
+  row-gap: 1.5rem;
+}
+
+.dept-stats-bar--compact .dept-stat-cell {
+  padding-inline: 1rem;
+}
+
+.dept-stats-bar--compact .dept-stat-cell__icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.dept-stats-bar--compact .dept-stat-cell__value {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.dept-stats-bar--compact .dept-stat-cell__label {
+  margin-top: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* ==========================================================================
+   OVERVIEW: highlights + technology + contact rail
+   ========================================================================== */
+.dept-overview {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  background-color: var(--gray-50);
+}
+
+.dept-overview__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .dept-overview__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .dept-overview__main {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.dept-overview__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dept-panel {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.dept-panel__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-panel__bar {
+  width: 0.375rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+  background-color: var(--teal-600);
+  border-radius: var(--radius-full);
+}
+
+.dept-panel__subtitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-panel__subtitle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--teal-600);
+  background-color: var(--teal-100);
+  border-radius: var(--radius-xl);
+}
+
+.dept-grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dept-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Highlight / facility / achievement row */
+.dept-tick {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: rgb(240 253 250 / 0.5);
+  border: 1px solid var(--teal-100);
+  border-radius: var(--radius-xl);
+  transition: all 300ms var(--ease);
+}
+
+.dept-tick:hover {
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.dept-tick__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.125rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-radius: var(--radius-lg);
+  transition: transform 150ms var(--ease);
+}
+
+.dept-tick--grow:hover .dept-tick__mark {
+  transform: scale(1.1);
+}
+
+.dept-tick__text {
+  font-size: 0.875rem;
+  line-height: 1.625;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* Technology card */
+.dept-tech {
+  padding: 1.25rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  transition: all 300ms var(--ease);
+}
+
+.dept-tech:hover {
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-md);
+}
+
+.dept-tech__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.dept-tech__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--teal-600);
+  background-color: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  transition: border-color 150ms var(--ease);
+}
+
+.dept-tech:hover .dept-tech__icon {
+  border-color: var(--teal-300);
+}
+
+.dept-tech__body {
+  flex: 1 1 0%;
+}
+
+.dept-tech__name {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-tech__desc {
+  font-size: 0.75rem;
+  line-height: 1.625;
+  color: var(--gray-600);
+}
+
+/* --- Contact rail --------------------------------------------------------- */
+.dept-rail {
+  position: sticky;
+  top: 5rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 2px solid var(--teal-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.dept-rail__head {
+  margin-bottom: 1.5rem;
+  padding-block: 0.75rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-radius: var(--radius-xl);
+}
+
+.dept-rail__title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.dept-rail__subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--teal-100);
+}
+
+.dept-rail__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dept-rail__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--gray-50);
+  border-radius: var(--radius-xl);
+}
+
+.dept-rail__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--teal-600);
+  background-color: var(--teal-100);
+  border-radius: var(--radius-lg);
+}
+
+.dept-rail__label {
+  margin-bottom: 0.125rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.dept-rail__value {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-rail__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dept-rail__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-block: 0.875rem;
+  font-weight: 700;
+  border-radius: var(--radius-xl);
+  transition: all 150ms var(--ease);
+}
+
+.dept-rail__btn .icon {
+  font-size: 1.125rem;
+}
+
+.dept-rail__btn--primary {
+  color: #ffffff;
+  background-color: var(--teal-600);
+  box-shadow: var(--shadow-lg);
+}
+
+.dept-rail__btn--primary:hover {
+  background-color: var(--teal-700);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-0.125rem);
+}
+
+.dept-rail__btn--ghost {
+  color: var(--teal-600);
+  border: 2px solid var(--teal-600);
+}
+
+.dept-rail__btn--ghost:hover {
+  background-color: var(--teal-50);
+}
+
+.dept-rail__note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--teal-50);
+  border: 1px solid var(--teal-100);
+  border-radius: var(--radius-xl);
+}
+
+.dept-rail__note p {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
+  color: var(--gray-600);
+}
+
+.dept-rail__note strong {
+  font-weight: 700;
+  color: var(--teal-700);
+}
+
+.dept-rail__note--red {
+  background-color: var(--red-50);
+  border-color: var(--red-100);
+}
+
+.dept-rail__note--red strong {
+  color: var(--red-700);
+}
+
+/* ==========================================================================
+   SECTION HEADERS (services / testimonials / faq)
+   ========================================================================== */
+.dept-section {
+  padding-block: 3rem;
+}
+
+.dept-section--white {
+  background-color: #ffffff;
+}
+
+.dept-section--gray {
+  background-color: var(--gray-50);
+}
+
+.dept-section__head {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.dept-pill-wrap {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.dept-pill-label {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+}
+
+.dept-pill-label--teal {
+  color: var(--teal-700);
+  background-color: var(--teal-100);
+}
+
+.dept-pill-label--red {
+  color: var(--red-700);
+  background-color: var(--red-100);
+}
+
+.dept-section__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-section__lede {
+  max-width: 42rem;
+  margin-inline: auto;
+  color: var(--gray-600);
+}
+
+/* ==========================================================================
+   SERVICE CARDS
+   ========================================================================== */
+.dept-services {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dept-services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dept-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dept-service {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all 500ms var(--ease);
+}
+
+.dept-service:hover {
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-2xl);
+}
+
+.dept-service__media {
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+}
+
+.dept-service__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease);
+}
+
+.dept-service:hover .dept-service__media img {
+  transform: scale(1.1);
+}
+
+.dept-service__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(19 78 74 / 0.2);
+}
+
+.dept-service__body {
+  padding: 1.25rem;
+}
+
+.dept-service__name {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: var(--teal-700);
+}
+
+.dept-service__count {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--teal-50);
+  border-radius: var(--radius-lg);
+}
+
+.dept-service__count .icon {
+  font-size: 1.125rem;
+  color: var(--teal-600);
+}
+
+.dept-service__count-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--gray-700);
+}
+
+.dept-service__count-text strong {
+  font-weight: 700;
+  color: var(--teal-700);
+}
+
+.dept-service__desc {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--gray-600);
+}
+
+.dept-service__procs {
+  margin-bottom: 1rem;
+}
+
+.dept-service__procs-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+
+.dept-service__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dept-chip-proc {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: var(--red-700);
+  background-color: var(--red-50);
+  border: 1px solid var(--red-100);
+  border-radius: var(--radius-lg);
+}
+
+.dept-chip-more {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  background-color: var(--gray-100);
+  border-radius: var(--radius-lg);
+}
+
+.dept-service__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-block: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 150ms var(--ease);
+}
+
+.dept-service__cta:hover {
+  background-color: var(--teal-700);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-0.125rem);
+}
+
+.dept-service__cta .icon {
+  font-size: 1rem;
+  transition: transform 150ms var(--ease);
+}
+
+.dept-service:hover .dept-service__cta .icon {
+  transform: translateX(0.25rem);
+}
+
+/* ==========================================================================
+   REVIEWS
+   ========================================================================== */
+.dept-reviews {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dept-reviews {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dept-review {
+  padding: 1.5rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  transition: box-shadow 150ms var(--ease);
+}
+
+.dept-review:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.dept-review__head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dept-review__avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+.dept-review__name {
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-review__stars {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--yellow-400);
+}
+
+.dept-review__text {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--gray-600);
+}
+
+.dept-review__source {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.dept-review__source svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.375rem;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   FACILITIES + ACHIEVEMENTS
+   ========================================================================== */
+.dept-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .dept-split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.dept-panel--bordered {
+  border: 2px solid var(--gray-100);
+}
+
+.dept-panel__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dept-panel__header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--teal-600);
+  background-color: var(--teal-100);
+  border-radius: var(--radius-xl);
+}
+
+.dept-panel__header-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.dept-faq {
+  max-width: 56rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dept-faq__item {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: all 300ms var(--ease);
+}
+
+.dept-faq__item:hover {
+  border-color: var(--teal-200);
+  box-shadow: var(--shadow-md);
+}
+
+.dept-faq__trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.dept-faq__trigger:focus {
+  outline: none;
+}
+
+.dept-faq__q {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1 1 0%;
+}
+
+.dept-faq__q-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--teal-700);
+  background-color: var(--teal-100);
+  border-radius: var(--radius-xl);
+  transition: background-color 150ms var(--ease);
+}
+
+.dept-faq__item:hover .dept-faq__q-mark {
+  background-color: var(--teal-200);
+}
+
+.dept-faq__q-text {
+  padding-top: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-faq__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  color: var(--teal-600);
+  background-color: var(--teal-50);
+  border-radius: var(--radius-lg);
+  transition: background-color 150ms var(--ease);
+}
+
+.dept-faq__item:hover .dept-faq__chevron {
+  background-color: var(--teal-100);
+}
+
+/* The original toggles the panel in/out of the tree with no transition. */
+.dept-faq__panel {
+  display: none;
+  overflow: hidden;
+}
+
+.dept-faq__item.is-open .dept-faq__panel {
+  display: block;
+}
+
+.dept-faq__answer-wrap {
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.dept-faq__answer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-left: 3.5rem;
+}
+
+.dept-faq__answer {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--gray-600);
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+}
+
+/* --- "Still have questions?" ---------------------------------------------- */
+.dept-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.dept-cta__card {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: 2rem;
+  background-color: var(--teal-50);
+  border: 2px solid var(--teal-100);
+  border-radius: var(--radius-2xl);
+}
+
+.dept-cta__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-cta__lede {
+  margin-bottom: 1rem;
+  color: var(--gray-600);
+}
+
+.dept-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.dept-cta__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: var(--radius-xl);
+  transition: all 150ms var(--ease);
+}
+
+.dept-cta__btn .icon {
+  font-size: 1.125rem;
+}
+
+.dept-cta__btn--primary {
+  color: #ffffff;
+  background-color: var(--teal-600);
+  box-shadow: var(--shadow-md);
+}
+
+.dept-cta__btn--primary:hover {
+  background-color: var(--teal-700);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-0.125rem);
+}
+
+.dept-cta__btn--ghost {
+  color: var(--teal-600);
+  background-color: #ffffff;
+  border: 2px solid var(--teal-600);
+}
+
+.dept-cta__btn--ghost:hover {
+  background-color: var(--teal-50);
+}
+
+/* ==========================================================================
+   GENERAL MEDICINE — the dynamic `/department/:id` route renders a lighter
+   variant: two-up services with no overlay/badges and a plainer FAQ row.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .dept-services--pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.dept-service__media--plain::after {
+  content: none;
+}
+
+.dept-service__name--plain {
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.dept-faq__item--plain .dept-faq__trigger {
+  justify-content: space-between;
+}
+
+.dept-faq__q-text--plain {
+  padding-top: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.dept-faq__chevron--plain {
+  width: auto;
+  height: auto;
+  margin-left: 0;
+  background-color: transparent;
+  transition: transform 300ms var(--ease);
+}
+
+.dept-faq__item--plain:hover .dept-faq__chevron--plain {
+  background-color: transparent;
+}
+
+.dept-faq__item--plain.is-open .dept-faq__chevron--plain {
+  transform: rotate(180deg);
+}
+
+.dept-faq__answer--plain {
+  padding: 0 1.5rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--gray-600);
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+}

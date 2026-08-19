@@ -1,0 +1,464 @@
+JANANI HOSPITALS                                                                Website Sitemap & Developer Specifications
+
+
+
+
+JANANI HOSPITALS
+Website Sitemap & WordPress Developer Specifications
+Including WP Amelia Appointment Booking Integration
+Prepared for WordPress Developer | 03/03/2026
+
+
+
+
+1. Project Overview
+This document provides the complete sitemap, page-by-page specifications, and technical integration details for
+the Janani Hospitals WordPress website. The site includes a fully automated appointment booking system
+powered by the WP Amelia plugin, with automated email confirmations sent to both patients and doctors upon
+booking completion.
+
+
+ Project Details                                               Technology Stack
+ Client: Janani Hospitals                                      CMS: WordPress (latest)
+ Website: jananihospitals.com                                  Booking Plugin: WP Amelia
+ Type: Hospital / Healthcare                                   Email: SMTP / WP Mail (Amelia)
+ Total Pages: 15 Pages                                         SEO Plugin: Yoast SEO / RankMath
+
+
+
+
+2. Complete Site Structure
+The website is organized into the following main sections. All pages should be accessible from the primary
+navigation menu unless marked as secondary pages.
+
+
+   #     Page Name                                  URL Slug                      Nav Level
+  01     Home                                       /                             Primary Nav
+  02     About Us                                   /about                        Primary Nav
+  03     Departments & Specialities                 /departments                  Primary Nav
+  04     Our Doctors                                /doctors                      Primary Nav
+  05     Doctor Profile (Dynamic)                   /doctors/[doctor-name]        Sub-page (auto)
+  06     Book an Appointment                        /book-appointment             Primary Nav (CTA)
+  07     Appointment Confirmation                   /appointment-confirmed        Auto-redirect (Amelia)
+  08     Services                                   /services                     Primary Nav
+  09     Patient Information                        /patient-information          Secondary Nav
+  10     Health Packages                            /health-packages              Primary Nav
+  11     Gallery                                    /gallery                      Secondary Nav
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                         Page 1 of 9
+JANANI HOSPITALS                                                                 Website Sitemap & Developer Specifications
+
+
+  12      Blog / Health Tips                        /blog                           Secondary Nav
+  13      Careers                                   /careers                        Footer Nav
+  14      Contact Us                                /contact                        Primary Nav
+  15      Privacy Policy / T&C                      /privacy-policy                 Footer Nav
+
+
+
+
+3. Page-by-Page Specifications
+Page 01 — Home
+             Home Page                                               First impression of the hospital. Should be
+    01       /                                                       visually strong, trust-building, and guide
+                                                                     visitors to book an appointment.
+  COMP.      ▸ Hero Banner – Full-width with hospital tagline, CTA button: 'Book an Appointment'
+             ▸ Quick Stats Bar – No. of Doctors, Specialities, Years of Experience, Patients Treated
+             ▸ Featured Departments – Icon cards linking to /departments
+             ▸ Why Choose Us – Trust indicators (24/7 Care, Experienced Doctors, Modern Equipment)
+             ▸ Featured Doctors – Photo cards with name, speciality, and 'Book Now' button
+             ▸ WP Amelia Widget – Embed short booking form on homepage (optional)
+             ▸ Testimonials / Patient Reviews Slider
+             ▸ Latest Blog / Health Tips Section
+             ▸ Accreditations & Awards logos
+             ▸ Emergency Contact Banner – Sticky or prominent display
+   NOTE      Hero CTA button must link directly to /book-appointment page.
+
+
+
+Page 02 — About Us
+             About Us                                                Build trust and communicate the hospital's
+    02       /about                                                  mission, vision, and history.
+  COMP.      ▸ Hospital Story / History timeline
+             ▸ Mission & Vision statements
+             ▸ Core Values section
+             ▸ Leadership & Management team with photos
+             ▸ Infrastructure & Facilities highlights
+             ▸ Accreditations, Certifications, Awards
+             ▸ CTA block: 'Meet Our Doctors' linking to /doctors
+
+
+
+Page 03 — Departments & Specialities
+             Departments & Specialities                              Overview of all medical departments. Each
+    03       /departments                                            department links to a filtered doctors list.
+  COMP.      ▸ Grid/card layout for all departments (e.g. Cardiology, Orthopaedics, Gynaecology, Paediatrics,
+             Neurology, General Surgery, etc.)
+             ▸ Each card: Department Icon, Name, Short description, 'View Doctors' button
+             ▸ 'View Doctors' filters /doctors page by department
+             ▸ Department detail pages optional (expandable or separate subpage)
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                             Page 2 of 9
+JANANI HOSPITALS                                                                  Website Sitemap & Developer Specifications
+
+
+   NOTE      Departments must be configured as 'Services' in WP Amelia so patients can select them during
+             booking.
+
+
+
+Page 04 — Our Doctors
+             Our Doctors                                             Searchable and filterable directory of all
+    04       /doctors                                                doctors. Each doctor links to a full profile
+                                                                     page.
+  COMP.      ▸ Search bar – Filter by doctor name or speciality
+             ▸ Filter by Department dropdown
+             ▸ Doctor card: Photo, Name, Designation, Speciality, Experience, 'Book Appointment' button
+             ▸ 'Book Appointment' button pre-selects the doctor in Amelia booking widget
+             ▸ Pagination or Load More
+
+
+
+Page 05 — Doctor Profile (Dynamic)
+             Doctor Profile                                          Individual profile page for each doctor.
+    05       /doctors/[doctor-name]                                  Dynamically generated. Must be synced
+                                                                     with WP Amelia employee/doctor data.
+  COMP.      ▸ Doctor Photo (large), Name, Designation, Qualifications
+             ▸ Speciality & Sub-speciality
+             ▸ Years of Experience
+             ▸ Available Days & Timings (pulled from Amelia schedule)
+             ▸ Education & Training
+             ▸ Achievements / Publications (optional)
+             ▸ Embedded Amelia Booking Widget — pre-filtered to this doctor
+             ▸ Patient Reviews for this doctor (optional)
+   NOTE      Amelia 'Employee' must be created for each doctor. Profile page embeds the [ameliabooking
+             employee=X] shortcode.
+
+
+
+Page 06 — Book an Appointment ⭐(Key Automation Page)
+             Book an Appointment                                     Core automation page. Patients select
+             /book-appointment                                       Department, Doctor, Date & Time and
+    06                                                               complete booking. Automated emails sent
+                                                                     via WP Amelia to both patient and doctor.
+  COMP.      ▸ Step 1: Select Department / Speciality (Amelia 'Service Category')
+             ▸ Step 2: Select Doctor (Amelia 'Employee' filtered by department)
+             ▸ Step 3: Select Date from available calendar
+             ▸ Step 4: Select Time Slot from available slots
+             ▸ Step 5: Enter Patient Details (Name, Phone, Email, Reason for Visit)
+             ▸ Step 6: Review & Confirm
+             ▸ Booking Confirmation screen with appointment summary
+             ▸ Automatic Email to Patient — Confirmation with date, time, doctor, location
+             ▸ Automatic Email to Doctor — Notification with patient name, date, time, reason
+             ▸ Optional: SMS notification (Amelia add-on)
+   NOTE      Use Amelia shortcode: [ameliabooking]. Configure SMTP for reliable email delivery. Set up notification
+             templates in Amelia > Notifications for both 'Customer' and 'Employee'.
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                               Page 3 of 9
+JANANI HOSPITALS                                                                  Website Sitemap & Developer Specifications
+
+
+Page 07 — Appointment Confirmation
+             Appointment Confirmed                                    Thank-you page shown after successful
+    07       /appointment-confirmed                                   booking. Amelia redirects here
+                                                                      automatically.
+  COMP.      ▸ Confirmation message with booking summary
+             ▸ Reminder: 'You will receive a confirmation email shortly'
+             ▸ Add to Google Calendar button (Amelia feature)
+             ▸ CTA: 'Book Another Appointment' and 'Return to Home'
+   NOTE      Set this URL in Amelia Settings > Redirect URL after booking. Amelia passes booking details via URL
+             parameters.
+
+
+
+Page 08 — Services
+             Services                                                 Overview of all medical and diagnostic
+    08       /services                                                services offered by the hospital.
+  COMP.      ▸ Service categories: Diagnostics, Radiology, Laboratory, ICU, Emergency, OPD, Surgeries
+             ▸ Each service: icon, name, brief description
+             ▸ CTA to Book Appointment for relevant services
+
+
+
+Page 09 — Patient Information
+             Patient Information                                      Helpful information for patients visiting or
+    09       /patient-information                                     admitted to the hospital.
+  COMP.      ▸ OPD Timings
+             ▸ Visiting Hours
+             ▸ Admission & Discharge Process
+             ▸ Insurance & TPA information
+             ▸ FAQ section
+             ▸ Patient Rights & Responsibilities
+
+
+
+Page 10 — Health Packages
+             Health Packages                                          Preventive health check packages for
+    10       /health-packages                                         individuals, couples, seniors, and
+                                                                      corporates.
+  COMP.      ▸ Package cards with name, included tests, price, target audience
+             ▸ CTA: 'Book This Package' — links to /book-appointment with package pre-selected
+             ▸ Corporate enquiry form
+
+
+
+Page 11 — Gallery
+             Gallery                                                  Visual showcase of hospital facilities,
+    11       /gallery                                                 departments, and events.
+  COMP.      ▸ Filterable photo gallery (Facilities, Events, Team, Equipment)
+             ▸ Lightbox view
+             ▸ Video gallery section (optional)
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                              Page 4 of 9
+JANANI HOSPITALS                                                                     Website Sitemap & Developer Specifications
+
+
+
+
+Page 12 — Blog / Health Tips
+             Blog / Health Tips                                         Health education content to improve SEO
+    12       /blog                                                      and patient engagement.
+  COMP.      ▸ Blog listing page with featured image, title, excerpt, date, category
+             ▸ Categories: Nutrition, Wellness, Disease Awareness, Doctor Advice
+             ▸ Single blog post page with related posts
+             ▸ Author bio (linked to doctor profile if applicable)
+             ▸ Search and filter
+
+
+
+Page 13 — Careers
+             Careers                                                    Job listings for medical and administrative
+    13       /careers                                                   staff.
+  COMP.      ▸ Current openings list with job title, department, type (Full/Part-time)
+             ▸ Application form or 'Apply Now' email link
+             ▸ General CV submission option
+
+
+
+Page 14 — Contact Us
+             Contact Us                                                 All contact channels and location details.
+    14       /contact
+  COMP.      ▸ Contact form (Name, Email, Phone, Department, Message)
+             ▸ Phone numbers, Email addresses
+             ▸ Hospital address with embedded Google Map
+             ▸ Emergency hotline prominently displayed
+             ▸ Department-wise contact directory
+             ▸ Social media links
+
+
+
+Page 15 — Privacy Policy / Terms & Conditions
+             Privacy Policy / T&C                                       Legal compliance page.
+    15       /privacy-policy
+  COMP.      ▸ Patient data privacy policy
+             ▸ Website terms of use
+             ▸ Cookie policy
+             ▸ Disclaimer
+
+
+
+
+4. WP Amelia — Booking Automation Specifications
+WP Amelia is the appointment booking plugin that powers the full automation workflow. The following
+configurations are required to achieve automated email confirmations for both patients and doctors.
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                               Page 5 of 9
+JANANI HOSPITALS                                                                     Website Sitemap & Developer Specifications
+
+
+4.1 Initial Setup Checklist
+ Setup Item                            Details / Action                                                   Priority
+ Install WP Amelia                     Install from WordPress Plugin Directory. Activate license
+                                                                                                          CRITICAL
+                                       key for Pro features (email notifications, custom fields).
+
+ Configure SMTP                        Install WP Mail SMTP plugin. Set up SMTP with
+                                       Gmail/SendGrid/Mailchimp for reliable email delivery.              CRITICAL
+                                       Set 'From' name as Janani Hospitals.
+
+ Add Employees (Doctors)               Create each doctor as an 'Employee' in Amelia. Include
+                                       name, photo, email address, phone. Assign to relevant              CRITICAL
+                                       services.
+
+ Add Services                          Create each department as a 'Service' in Amelia (e.g.
+ (Departments)                         Cardiology, Orthopaedics). Group under 'Service                    CRITICAL
+                                       Categories'.
+
+ Set Working Hours                     For each doctor (employee), define available days and
+                                                                                                            HIGH
+                                       time slots under their working hours schedule.
+
+ Add Locations                         Add hospital location(s) in Amelia > Locations. Include
+                                                                                                            HIGH
+                                       address to display in email confirmation.
+
+ Configure Notifications               Set up email notification templates in Amelia >
+                                                                                                          CRITICAL
+                                       Notifications for all relevant triggers.
+
+ Custom Booking Fields                 Add custom form fields: Reason for Visit, Patient Age,
+                                                                                                          MEDIUM
+                                       Insurance details.
+
+ Confirmation Redirect                 Set redirect URL to /appointment-confirmed in Amelia >
+                                                                                                            HIGH
+                                       Settings > General.
+
+ Test End-to-End                       Complete a test booking. Verify emails received by both
+                                                                                                          CRITICAL
+                                       test patient email and doctor email.
+
+
+
+
+4.2 Email Notification Setup
+Navigate to: WP Admin > Amelia > Notifications. Configure the following notification types:
+
+
+ Notification Trigger               Recipient             Email Content to Include
+ Appointment Approved                    Patient          Patient name, Doctor name, Department, Date, Time,
+ (Booking Confirmed)                                      Hospital Address, Cancellation link
+ Appointment Approved                    Doctor /         Patient name, Patient phone, Date, Time, Reason for Visit,
+ (Booking Confirmed)                    Employee          Department
+ Appointment Pending                     Patient          Booking received notice, pending confirmation by staff
+ Appointment Rejected /                  Patient          Cancellation reason, option to rebook link
+ Cancelled
+ Appointment Rescheduled                 Patient          New date, new time, doctor name, confirmation details
+ Appointment Rescheduled                 Doctor /         New date, new time, patient details
+                                        Employee
+ Appointment Reminder (24                Patient          Reminder of upcoming appointment, doctor, time, location
+ hrs before)
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                                Page 6 of 9
+JANANI HOSPITALS                                                                      Website Sitemap & Developer Specifications
+
+
+
+
+4.3 Key Amelia Shortcodes
+Use these shortcodes to embed the booking widget on the appropriate pages:
+
+
+ Shortcode                                          Use On Page                       Description
+ [ameliabooking]                                    /book-appointment                 Full booking form — all steps
+ [ameliabooking service=X]                          /departments, /services           Pre-select department/service
+ [ameliabooking employee=X]                         /doctors/[doctor-name]            Pre-select specific doctor
+ [ameliabooking category=X]                         /health-packages                  Pre-select package category
+ [ameliabooking step=1]                             Homepage (mini widget)            Compact single-step form
+
+
+
+
+5. Appointment Booking Flow (User Journey)
+The following describes the end-to-end patient journey from landing on the site to receiving a booking
+confirmation email.
+
+
+ Step    Stage                   Patient Action / System Action                              Result
+   1     Discovery               Patient visits website homepage or /book-                   Lands on website
+                                 appointment directly via search/social media.
+   2     Select Service          Patient selects department or speciality from Amelia        Department selected
+                                 booking widget.
+   3     Select Doctor           Patient browses available doctors for the selected          Doctor selected
+                                 department and selects preferred doctor.
+   4     Select Date             Patient views available calendar dates for the              Date selected
+                                 selected doctor.
+   5     Select Time Slot        Patient selects an available time slot for the chosen       Time slot selected
+                                 date.
+   6     Enter Details           Patient fills in: Full Name, Phone, Email, Reason for       Form data entered
+                                 Visit, any custom fields.
+   7     Confirm Booking         Patient reviews summary and clicks 'Confirm                 Booking submitted
+                                 Appointment'.
+   8     System: Save            WP Amelia saves appointment to database, updates            Appointment saved
+         Booking                 doctor's calendar.
+   9     Email to Patient        Amelia sends automated confirmation email to patient        Patient notified ✓
+                                 with all appointment details.
+  10     Email to Doctor         Amelia sends automated notification email to doctor         Doctor notified ✓
+                                 with patient and booking details.
+  11     Redirect                Patient is redirected to /appointment-confirmed page        Journey complete
+                                 with booking summary.
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                               Page 7 of 9
+JANANI HOSPITALS                                                              Website Sitemap & Developer Specifications
+
+
+6. Recommended WordPress Plugins
+ Plugin                                Purpose                      Notes
+ WP Amelia (Pro)                       Appointment Booking          Core booking & email automation plugin
+ WP Mail SMTP                          Reliable Email Delivery      Required for Amelia emails to reach inbox
+ Yoast SEO / RankMath                  Search Engine Optimization   Meta tags, sitemaps, schema markup
+ WP Rocket / LiteSpeed Cache           Performance & Caching        Improve page speed for better UX
+ Elementor / WPBakery                  Page Builder                 Visual layout of all pages
+ Contact Form 7 / WPForms              Contact & Enquiry Forms      For Contact Us and Careers pages
+ Smush / ShortPixel                    Image Optimization           Compress doctor photos and gallery
+ UpdraftPlus                           Backup                       Regular automated website backups
+ Wordfence Security                    Security                     Firewall and malware scanning
+ WPML (optional)                       Multi-language               If Tamil/Kannada language support needed
+
+
+
+
+7. Developer Notes & Delivery Checklist
+
+7.1 Important Requirements
+    •     All doctor profiles must be added as 'Employees' in WP Amelia before the site goes live.
+    •     SMTP must be tested and confirmed working before publishing the booking page.
+    •     Email notification templates in Amelia must include all booking variables: patient name, doctor, date, time,
+          location.
+    •     Each department must be created as a 'Service Category' in Amelia for filtering to work on /doctors page.
+    •     The /book-appointment page must be tested on mobile — majority of hospital bookings come from mobile
+          users.
+    •     Google Maps API key must be configured for the Contact page map embed.
+    •     SSL certificate must be active (HTTPS) for form security and patient data protection.
+
+
+
+7.2 Pre-Launch Checklist
+    •     All 15 pages created and published
+    •     WP Amelia configured: Services, Employees, Locations, Working Hours
+    •     SMTP email delivery tested for both patient and doctor notifications
+    •     Test booking completed end-to-end — patient email received, doctor email received
+    •     Mobile responsiveness checked on all pages
+    •     Page speed tested (Google PageSpeed Insights — target score 80+)
+    •     SEO plugin configured with meta titles and descriptions for all pages
+    •     Google Analytics / Search Console connected
+    •     Contact forms tested
+    •     SSL active — all pages loading on HTTPS
+    •     404 page customised
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                         Page 8 of 9
+JANANI HOSPITALS                                                                       Website Sitemap & Developer Specifications
+
+
+    •    Backup plugin configured and first backup taken
+
+
+
+
+Document Prepared By: Janani Hospitals | For WordPress Developer Use
+All specifications are subject to review and update. Contact client before making structural changes.
+
+
+
+
+jananihospitals.com | Confidential – Developer Use Only                                                                Page 9 of 9
+
