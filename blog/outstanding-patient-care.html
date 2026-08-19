@@ -244,7 +244,7 @@
         </div>
 
         <div class="site-nav__cta">
-          <a href="../pages/contact.html" class="btn-book">
+          <a href="#" onclick="openAppointmentModal(event)" class="btn-book">
             <svg class="icon btn-book__icon"><use href="#i-calendar"></use></svg>
             <span>Book Appointment</span>
           </a>
@@ -305,7 +305,7 @@
             <span>Contact</span>
           </a>
 
-          <a href="../pages/contact.html" class="mobile-menu__cta">
+          <a href="#" onclick="openAppointmentModal(event)" class="mobile-menu__cta">
             <svg class="icon"><use href="#i-calendar"></use></svg>
             <span>Book Appointment</span>
           </a>
@@ -433,12 +433,93 @@
       </div>
     </div>
   </footer>
+  <div id="appointmentModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeAppointmentModal()">&times;</button>
+      <h3 class="modal-title">Book Appointment</h3>
+      <form class="contact-form" action="https://app.formester.com/forms/ZU90MDpYm/submissions" method="POST">
+        <input type="hidden" name="form_type" value="appointment_popup">
+        <div style="margin-bottom: 1rem;">
+          <label for="modal-name" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
+          <input type="text" id="modal-name" name="name" required class="form-control" placeholder="Enter your full name">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label for="modal-phone" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number *</label>
+          <input type="tel" id="modal-phone" name="phone" required class="form-control" placeholder="Enter your phone number">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label for="modal-message" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+          <textarea id="modal-message" name="message" rows="3" class="form-control" placeholder="Any specific details?"></textarea>
+        </div>
+        <button type="submit" class="form-submit" style="width: 100%;">
+          <span>Submit Request</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg, 12px);
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.8rem; cursor: pointer;
+      color: #666;
+    }
+    .modal-close:hover {
+      color: #000;
+    }
+    .modal-title {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--teal-700, #0f766e);
+    }
+  </style>
+
+  <script>
+    function openAppointmentModal(e) {
+      if(e) e.preventDefault();
+      document.getElementById('appointmentModal').style.display = 'flex';
+    }
+    function closeAppointmentModal() {
+      document.getElementById('appointmentModal').style.display = 'none';
+    }
+    // Close when clicking outside
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('appointmentModal');
+      if (e.target === modal) {
+        closeAppointmentModal();
+      }
+    });
+  </script>
+
 
   <script src="../js/icons.js"></script>
   <script src="../js/layout.js"></script>
 </body>
 
 </html>
+
 
 
 
