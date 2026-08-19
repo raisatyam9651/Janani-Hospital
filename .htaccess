@@ -1,10 +1,10 @@
 RewriteEngine On
 
 # Ensure DirectoryIndex is set
-DirectoryIndex index.html index.php
+DirectoryIndex index.php
 
-# Redirect to remove trailing index.html or index.php
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(.*)index\.(html|php) [NC]
+# Redirect to remove trailing index.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(.*)index\.php [NC]
 RewriteRule ^ %1 [R=301,L]
 
 # Remove .php extension
@@ -13,8 +13,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.php -f
 RewriteRule ^(.+?)/?$ /.php [L]
 
-# Remove .html extension
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ /.html [L]
+# Optional: redirect .html to .php (if users have old bookmarks)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(.*)\.html [NC]
+RewriteRule ^(.*)\.html$ / [R=301,L]
