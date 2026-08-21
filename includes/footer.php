@@ -163,7 +163,17 @@
 
   <script src="/js/icons.js"></script>
   <script src="/js/layout.js"></script>
-  <script src="/js/home.js"></script>
+  <script src="/js/reveal.js"></script>
+  <?php 
+    if (!isset($page_name) || $page_name === 'home' || $page_name === '') {
+        echo '<script src="/js/home.js"></script>';
+    }
+    if (isset($page_js)) {
+        foreach ((array)$page_js as $_js) {
+            echo '<script src="/js/' . htmlspecialchars($_js) . '"></script>';
+        }
+    }
+  ?>
 </body>
 
 </html>
