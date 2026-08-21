@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div>
           <div class="profile-card" data-reveal="up" data-reveal-on="mount">
             <div class="profile-card__media">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71f153678f?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Dr. Priya Dharshini">
+              <img src="/assets/images/doctor-placeholder.svg" alt="Dr. Priya Dharshini">
               <div class="profile-card__rating"><svg class="icon"><use href="#i-star"></use></svg> 4.9</div>
             </div>
             <div class="profile-card__body">

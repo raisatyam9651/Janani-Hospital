@@ -98,7 +98,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           data-dept="Pediatrics" data-reveal="scale" data-reveal-on="mount"
           data-reveal-delay="100">
           <div class="doctor-card__media">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71f153678f?auto=format&amp;fit=crop&amp;q=80&amp;w=600" alt="Dr. Priya Dharshini">
+            <img src="/assets/images/doctor-placeholder.svg" alt="Dr. Priya Dharshini">
             <div class="doctor-card__hover">
               <a href="/pages/doctor-3.php" class="doctor-card__view">
                 <span>View Profile</span>

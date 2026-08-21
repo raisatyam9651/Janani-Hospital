@@ -381,7 +381,7 @@
             </div>
           </div>
 
-        <a href="/blog/index.php" class="nav-link" data-nav="blog">Blog</a>
+        <a href="/blog/" class="nav-link" data-nav="blog">Blog</a>
         <a href="/pages/contact.php" class="nav-link" data-nav="contact">Contact</a>
         </div>
 
@@ -438,7 +438,7 @@
             </div>
           </div>
 
-          <a href="/blog/index.php" class="mobile-link" data-nav="blog">
+          <a href="/blog/" class="mobile-link" data-nav="blog">
             <span class="mobile-link__icon mobile-link__icon--emerald"><svg class="icon"><use href="#i-activity"></use></svg></span>
             <span>Blog</span>
           </a>

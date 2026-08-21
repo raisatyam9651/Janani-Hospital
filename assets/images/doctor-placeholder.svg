@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img"
+     aria-label="Photograph not yet available">
+  <!--
+    Neutral stand-in for a doctor portrait whose photograph we do not hold.
+    Deliberately anonymous: a real named clinician must never be represented
+    by a stock photograph of a different real person. Swap this <img> for the
+    doctor's own photograph as soon as it is supplied.
+    Sized 600x800 to match .doctor-card__media / .profile-card__media, both of
+    which object-fit: cover.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0fdfa"/>
+      <stop offset="100%" stop-color="#ccfbf1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bg)"/>
+
+  <!-- Head and shoulders, drawn in the site's teal so it reads as branded
+       rather than as a failed image. -->
+  <g fill="#0d9488" opacity="0.32">
+    <circle cx="300" cy="330" r="104"/>
+    <path d="M300 462c-107 0-194 74-194 165v53h388v-53c0-91-87-165-194-165z"/>
+  </g>
+
+  <!-- Stethoscope, so the placeholder still reads as clinical. -->
+  <g fill="none" stroke="#0f766e" stroke-width="9" stroke-linecap="round" opacity="0.5">
+    <path d="M239 470v54a61 61 0 0 0 122 0v-54"/>
+    <path d="M361 566v34a44 44 0 0 0 88 0v-18"/>
+  </g>
+  <circle cx="449" cy="561" r="21" fill="#0f766e" opacity="0.5"/>
+</svg>

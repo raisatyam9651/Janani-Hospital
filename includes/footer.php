@@ -24,7 +24,7 @@
             <li><a href="/department/obg.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>OBG</span></a></li>
             <li><a href="/department/medicine.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>General Medicine</span></a></li>
             <li><a href="/department/surgery.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>Surgery</span></a></li>
-            <li><a href="/blog/index.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>Blog</span></a></li>
+            <li><a href="/blog/" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>Blog</span></a></li>
             <li><a href="/department/ortho.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>Orthopedics</span></a></li>
             <li><a href="/department/urology.php" class="footer-link"><svg class="icon"><use href="#i-arrow-right"></use></svg><span>Urology</span></a></li>
           </ul>
