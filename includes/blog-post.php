@@ -22,7 +22,9 @@ $post_url  = blog_url($slug);
 $post_body = isset($post_body) ? $post_body : '';
 $related   = blog_related($BLOG_POSTS, $slug, 3);
 
-$page_title       = $post['title'] . ' | Janani Hospital Vijayapura';
+// 'title_tag' is the short form for long headlines; the H1 still uses 'title'.
+$page_title       = (isset($post['title_tag']) ? $post['title_tag'] : $post['title'])
+                  . ' | Janani Hospital Vijayapura';
 $page_description = $post['description'];
 $page_keywords    = $post['keywords'];
 $page_css         = ['pages.css'];

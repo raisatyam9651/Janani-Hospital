@@ -14,7 +14,11 @@
         $post_body, then include includes/blog-post.php. Copy an existing post.
 
    Text here is stored RAW (plain apostrophes and ampersands); every value is
-   escaped at the point it is printed. Set 'image_fit' => 'contain' when the
+   escaped at the point it is printed. 'title_tag' is an optional short form
+   used for the <title> only, for headlines that would otherwise be truncated
+   in search results; the article's own H1 always uses 'title'.
+
+   Set 'image_fit' => 'contain' when the
    image is a document (certificate, newspaper page) that a cover-crop would
    destroy; photographs omit it and crop to fill.
 
@@ -38,6 +42,7 @@ $BLOG_POSTS = [
   /* ---------------------------------------------------------------- Women's */
   'womens-health-essential-checkups' => [
     'title'        => "Understanding Women's Health: Essential Checkups at Every Age",
+    'title_tag'    => "Women's Health Checkups by Age",
     'category'     => "Women's Health",
     'date'         => '2026-08-12',
     'date_display' => 'August 12, 2026',
@@ -60,6 +65,7 @@ $BLOG_POSTS = [
   /* -------------------------------------------------------------- Fertility */
   'modern-advances-in-ivf-technology' => [
     'title'        => 'Modern Advances in IVF Technology: What Has Actually Changed',
+    'title_tag'    => 'Advances in IVF Technology',
     'category'     => 'Fertility',
     'date'         => '2026-08-04',
     'date_display' => 'August 04, 2026',
@@ -82,6 +88,7 @@ $BLOG_POSTS = [
   /* ------------------------------------------------------------- Pediatrics */
   'common-childhood-illnesses-guide' => [
     'title'        => 'Common Childhood Illnesses: What to Treat at Home and When to See a Doctor',
+    'title_tag'    => 'Child Fever & Common Illnesses',
     'category'     => 'Pediatrics',
     'date'         => '2026-07-26',
     'date_display' => 'July 26, 2026',
@@ -104,6 +111,7 @@ $BLOG_POSTS = [
   /* ---------------------------------------------------------------- Women's */
   'antenatal-care-month-by-month' => [
     'title'        => 'Your Antenatal Care Timeline: A Month-by-Month Pregnancy Guide',
+    'title_tag'    => 'Antenatal Care Schedule',
     'category'     => "Women's Health",
     'date'         => '2026-07-18',
     'date_display' => 'July 18, 2026',
@@ -126,6 +134,7 @@ $BLOG_POSTS = [
   /* ---------------------------------------------------------------- Surgery */
   'laparoscopic-surgery-what-to-expect' => [
     'title'        => 'Laparoscopic Surgery: What to Expect Before, During and After',
+    'title_tag'    => 'Laparoscopic Surgery Guide',
     'category'     => 'Surgery',
     'date'         => '2026-07-09',
     'date_display' => 'July 09, 2026',
@@ -148,6 +157,7 @@ $BLOG_POSTS = [
   /* ------------------------------------------------------- General Medicine */
   'managing-diabetes-and-blood-pressure' => [
     'title'        => 'Living Well with Diabetes and High Blood Pressure: A Practical Guide',
+    'title_tag'    => 'Diabetes & BP Care Guide',
     'category'     => 'General Medicine',
     'date'         => '2026-06-27',
     'date_display' => 'June 27, 2026',
@@ -170,6 +180,7 @@ $BLOG_POSTS = [
   /* --------------------------------------------------------------- Wellness */
   'why-preventive-health-checkups-matter' => [
     'title'        => 'Why Preventive Health Checkups Matter More Than You Think',
+    'title_tag'    => 'Preventive Health Checkups',
     'category'     => 'Wellness',
     'date'         => '2026-06-15',
     'date_display' => 'June 15, 2026',
@@ -236,6 +247,7 @@ $BLOG_POSTS = [
 
   'outstanding-patient-care' => [
     'title'        => 'Outstanding Patient Care Recognition - Medical Board India',
+    'title_tag'    => 'Outstanding Patient Care Award',
     'category'     => 'Awards & Recognition',
     'date'         => '2026-04-28',
     'date_display' => 'April 28, 2026',

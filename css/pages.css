@@ -49,6 +49,19 @@
   transform: none;
 }
 
+/* On a narrow screen a 30px horizontal slide pushes a full-width panel past
+   the viewport edge, so the page grows a transient sideways scrollbar for the
+   length of the animation (visible on the doctor profiles, which reveal on
+   mount). Below 640px these come in vertically instead - same entrance, no
+   overflow. Done here rather than with overflow-x on an ancestor, which would
+   break the sticky blog sidebar. */
+@media (max-width: 640px) {
+  .js-anim [data-reveal="left"],
+  .js-anim [data-reveal="right"] {
+    transform: translateY(20px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js-anim [data-reveal] {
     opacity: 1;
