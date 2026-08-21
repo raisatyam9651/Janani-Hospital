@@ -1,4 +1,4 @@
-<!doctype html>
+ï»¿<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,14 +6,14 @@
   <link rel="icon" type="image/png" href="/assets/images/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><?= isset($page_title) ? $page_title : ' ?></title>
-  <meta name="description" content="<?= isset($page_description) ? $page_description : ' ?>">
+  <title><?= isset($page_title) ? $page_title : '' ?></title>
+  <meta name="description" content="<?= isset($page_description) ? $page_description : '' ?>">
   <meta name="keywords"
     content="Janani Hospital, hospital, healthcare, multispeciality, surgery, IVF, pediatrics, OBG, medicine, Vijayapura">
   <meta name="author" content="Janani Hospital">
 
-  <meta property="og:title" content="<?= isset($page_title) ? $page_title : ' ?>">
-  <meta property="og:description" content="<?= isset($page_description) ? $page_description : ' ?>">
+  <meta property="og:title" content="<?= isset($page_title) ? $page_title : '' ?>">
+  <meta property="og:description" content="<?= isset($page_description) ? $page_description : '' ?>">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://example.com">
   <meta property="og:image"
@@ -85,7 +85,7 @@
     <div class="shell">
       <div class="site-nav__bar">
 
-        <a href="/" class="site-nav__logo" aria-label="Janani Hospital — home">
+        <a href="/" class="site-nav__logo" aria-label="Janani Hospital ï¿½ home">
           <img src="https://res.cloudinary.com/damfndmrm/image/upload/v1767163208/logo_eqtacj.png"
             alt="Janani Hospital">
           <span class="site-nav__logo-text"></span>
