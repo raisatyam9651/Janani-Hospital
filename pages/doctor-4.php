@@ -1,6 +1,6 @@
 <?php
-$page_title = "Dr. Suresh Babu - Janani Hospital in Vijayapura";
-$page_description = "Specialist in joint replacement and sports medicine. in Vijayapura.";
+$page_title = "Dr. Suresh Babu | Orthopedic Surgeon in Vijayapura";
+$page_description = "Dr. Suresh Babu is a joint replacement and sports medicine specialist at Janani Hospital, Vijayapura. Book an orthopedic consultation on +91 70908 31208.";
 $page_css  = ['pages.css'];
 $page_name = 'doctor-4';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

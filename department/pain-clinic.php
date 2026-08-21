@@ -1,6 +1,6 @@
 <?php
-$page_title = "Pain Management Clinic - Janani Hospital in Vijayapura";
-$page_description = "Our Pain Management Clinic offers comprehensive treatment for chronic and acute pain conditions using a multidisciplinary approach, advanced interventional techniques, and personalized therapy plans to improve quality of life. in Vijayapura.";
+$page_title = "Pain Management Clinic in Vijayapura | Janani Hospital";
+$page_description = "Treatment for chronic back, neck, joint and nerve pain in Vijayapura using interventional pain techniques and personalised therapy at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

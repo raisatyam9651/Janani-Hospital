@@ -1,6 +1,6 @@
 <?php
-$page_title = "Privacy Policy - Janani Hospital in Vijayapura";
-$page_description = "How Janani Hospital collects, uses and safeguards your personal and medical information. in Vijayapura.";
+$page_title = "Privacy Policy | Janani Hospital, Vijayapura";
+$page_description = "How Janani Multispeciality Hospital, Vijayapura collects, uses, stores and safeguards the personal and medical information of its patients.";
 $page_css  = ['pages.css'];
 $page_name = 'privacy-policy';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

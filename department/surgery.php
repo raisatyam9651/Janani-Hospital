@@ -1,6 +1,6 @@
 <?php
-$page_title = "General Surgery Department - Janani Hospital in Vijayapura";
-$page_description = "Our General Surgery Department provides comprehensive surgical care, leveraging advanced minimally invasive techniques and an expert team to ensure the best outcomes. in Vijayapura.";
+$page_title = "General Surgery in Vijayapura | Janani Hospital";
+$page_description = "General and minimally invasive surgery in Vijayapura for hernia, gallbladder, appendix and more, with experienced surgeons and a faster recovery.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

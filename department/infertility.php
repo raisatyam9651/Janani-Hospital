@@ -1,6 +1,6 @@
 <?php
-$page_title = "Infertility Treatment Center - Janani Hospital in Vijayapura";
-$page_description = "Our Infertility Treatment Center provides comprehensive evaluation and treatment for male and female infertility with advanced reproductive technologies and personalized care. in Vijayapura.";
+$page_title = "Infertility Treatment in Vijayapura | Janani Hospital";
+$page_description = "Complete male and female infertility evaluation and treatment in Vijayapura using advanced reproductive technology and personalised care at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

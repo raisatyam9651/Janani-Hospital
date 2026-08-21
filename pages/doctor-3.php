@@ -1,6 +1,6 @@
 <?php
-$page_title = "Dr. Priya Dharshini - Janani Hospital in Vijayapura";
-$page_description = "Dedicated to providing compassionate and comprehensive care for infants and children. in Vijayapura.";
+$page_title = "Dr. Priya Dharshini | Child Specialist in Vijayapura";
+$page_description = "Dr. Priya Dharshini offers compassionate paediatric and newborn care at Janani Hospital, Vijayapura. Consult a trusted child specialist near KK Colony.";
 $page_css  = ['pages.css'];
 $page_name = 'doctor-3';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

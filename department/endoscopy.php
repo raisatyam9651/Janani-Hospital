@@ -1,6 +1,6 @@
 <?php
-$page_title = "Endoscopy Department - Janani Hospital in Vijayapura";
-$page_description = "Our state-of-art Endoscopy Department provides advanced diagnostic and therapeutic endoscopic procedures with precision imaging technology, ensuring accurate diagnosis and effective treatment for gastrointestinal conditions. in Vijayapura.";
+$page_title = "Endoscopy in Vijayapura | Gastro Diagnostics, Janani Hospital";
+$page_description = "Diagnostic and therapeutic endoscopy in Vijayapura with high-definition imaging for accurate gastrointestinal diagnosis and treatment at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

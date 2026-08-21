@@ -1,6 +1,6 @@
 <?php
-$page_title = "Laparoscopy Department - Janani Hospital in Vijayapura";
-$page_description = "Our Laparoscopy Department specializes in minimally invasive surgical procedures, offering patients faster recovery, less pain, and minimal scarring with advanced technology. in Vijayapura.";
+$page_title = "Laparoscopic Surgery in Vijayapura | Janani Hospital";
+$page_description = "Keyhole laparoscopic surgery in Vijayapura with smaller scars, less pain and faster recovery, performed by expert laparoscopic surgeons at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

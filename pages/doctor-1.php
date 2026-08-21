@@ -1,6 +1,6 @@
 <?php
-$page_title = "Dr. Janani Ramesh - Janani Hospital in Vijayapura";
-$page_description = "Expert in reproductive medicine and advanced IVF procedures with a high success rate. in Vijayapura.";
+$page_title = "Dr. Janani Ramesh | IVF and Fertility Specialist, Vijayapura";
+$page_description = "Dr. Janani Ramesh is an IVF and reproductive medicine specialist at Janani Hospital, Vijayapura, with a high fertility treatment success rate. Book now.";
 $page_css  = ['pages.css'];
 $page_name = 'doctor-1';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

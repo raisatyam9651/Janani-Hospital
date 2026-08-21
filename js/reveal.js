@@ -9,6 +9,11 @@
 (function () {
   "use strict";
 
+  // Tells the guard in includes/header.php that this file loaded, so the
+  // `js-anim` class (which is what actually hides [data-reveal] content) is
+  // allowed to stay on <html>.
+  window.__revealReady = true;
+
   var nodes = document.querySelectorAll("[data-reveal]");
   if (!nodes.length) return;
 

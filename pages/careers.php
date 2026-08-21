@@ -1,6 +1,6 @@
 <?php
-$page_title = "Careers - Janani Hospital in Vijayapura";
-$page_description = "Join our exceptional team. Explore current openings at Janani Hospital. in Vijayapura.";
+$page_title = "Careers at Janani Hospital, Vijayapura | Hospital Jobs";
+$page_description = "Explore doctor, nursing and paramedical job openings at Janani Multispeciality Hospital in Vijayapura, Karnataka. Apply now to join our care team.";
 $page_css  = ['pages.css'];
 $page_name = 'careers';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

@@ -1,6 +1,6 @@
 <?php
-$page_title = "Gallery - Janani Hospital in Vijayapura";
-$page_description = "Explore our state-of-the-art facilities and glimpse into the care we provide at Janani Hospitals. in Vijayapura.";
+$page_title = "Hospital Gallery | Janani Hospital, Vijayapura";
+$page_description = "Look inside Janani Multispeciality Hospital, Vijayapura - our operation theatres, NICU, ICU, labour rooms, wards and diagnostic facilities in KK Colony.";
 $page_css  = ['pages.css'];
 $page_name = 'gallery';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

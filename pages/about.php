@@ -1,6 +1,6 @@
 <?php
-$page_title = "About Janani Hospital in Vijayapura";
-$page_description = "Pioneering excellence in healthcare for over two decades with compassionate care and cutting-edge technology. in Vijayapura.";
+$page_title = "About Janani Hospital | Multispeciality Hospital, Vijayapura";
+$page_description = "Two decades of trusted healthcare in Vijayapura. Meet the doctors, facilities and values behind Janani Multispeciality Hospital and Research Centre.";
 $page_css  = ['marketing.css'];
 $page_name = 'about';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

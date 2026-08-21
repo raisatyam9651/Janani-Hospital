@@ -1,6 +1,6 @@
 <?php
-$page_title = "Paediatrics Department - Janani Hospital in Vijayapura";
-$page_description = "Our Paediatrics Department provides comprehensive healthcare for children from newborn to adolescence with a child-friendly approach and 24/7 emergency services. in Vijayapura.";
+$page_title = "Child Specialist in Vijayapura | Paediatrics, Janani Hospital";
+$page_description = "Child specialists in Vijayapura offering newborn to adolescent care, vaccination, growth monitoring and 24/7 paediatric emergency at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

@@ -6,30 +6,130 @@
   <link rel="icon" type="image/png" href="/assets/images/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><?= isset($page_title) ? $page_title : '' ?></title>
-  <meta name="description" content="<?= isset($page_description) ? $page_description : '' ?>">
-  <meta name="keywords"
-    content="Janani Hospital, hospital, healthcare, multispeciality, surgery, IVF, pediatrics, OBG, medicine, Vijayapura">
-  <meta name="author" content="Janani Hospital">
+  <?php
+    /* ----------------------------------------------------------------------
+       Shared SEO values. A page sets $page_title / $page_description before
+       including this file; everything below is derived from them so no page
+       has to repeat the NAP, canonical or social tags.
+       ---------------------------------------------------------------------- */
+    $site_name   = 'Janani Multispeciality Hospital and Research Centre';
+    $site_origin = 'https://jananihospitals.com';
+    $og_image    = $site_origin . '/assets/images/logo.png';
 
-  <meta property="og:title" content="<?= isset($page_title) ? $page_title : '' ?>">
-  <meta property="og:description" content="<?= isset($page_description) ? $page_description : '' ?>">
+    /* Built from SCRIPT_NAME, not REQUEST_URI: .htaccess serves every page at
+       both /pages/about and /pages/about.php, and SCRIPT_NAME resolves to the
+       same file either way - so one page can never emit two canonicals. */
+    $canonical = $site_origin . $_SERVER['SCRIPT_NAME'];
+    $canonical = preg_replace('#/index\.php$#', '/', $canonical);
+
+    $meta_title = isset($page_title) ? $page_title : $site_name . ' - Vijayapura';
+    $meta_desc  = isset($page_description) ? $page_description : '';
+    $meta_keys  = isset($page_keywords) ? $page_keywords
+      : 'hospital in Vijayapura, multispeciality hospital Vijayapura, Janani Hospital Vijayapura, IVF centre Vijayapura, gynecologist Vijayapura, emergency hospital Vijayapura Karnataka';
+  ?>
+
+  <title><?= htmlspecialchars($meta_title) ?></title>
+  <meta name="description" content="<?= htmlspecialchars($meta_desc) ?>">
+  <meta name="keywords" content="<?= htmlspecialchars($meta_keys) ?>">
+  <meta name="author" content="<?= htmlspecialchars($site_name) ?>">
+  <meta name="robots" content="<?= htmlspecialchars(isset($page_robots) ? $page_robots : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1') ?>">
+  <link rel="canonical" href="<?= htmlspecialchars($canonical) ?>">
+
+  <!-- Local / geo targeting: Vijayapura, Karnataka -->
+  <meta name="geo.region" content="IN-KA">
+  <meta name="geo.placename" content="Vijayapura, Karnataka">
+  <meta name="geo.position" content="16.8082822;75.7248957">
+  <meta name="ICBM" content="16.8082822, 75.7248957">
+  <meta name="language" content="en-IN">
+
+  <meta property="og:site_name" content="<?= htmlspecialchars($site_name) ?>">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="<?= htmlspecialchars($meta_title) ?>">
+  <meta property="og:description" content="<?= htmlspecialchars($meta_desc) ?>">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com">
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta property="og:url" content="<?= htmlspecialchars($canonical) ?>">
+  <meta property="og:image" content="<?= htmlspecialchars($og_image) ?>">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Janani Hospital - World-Class Healthcare">
-  <meta name="twitter:description"
-    content="Providing world-class medical care with compassion and cutting-edge technology for your family's health and wellbeing.">
-  <meta name="twitter:image"
-    content="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:title" content="<?= htmlspecialchars($meta_title) ?>">
+  <meta name="twitter:description" content="<?= htmlspecialchars($meta_desc) ?>">
+  <meta name="twitter:image" content="<?= htmlspecialchars($og_image) ?>">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
-    rel="stylesheet">
+  <!-- ------------------------------------------------------------------
+       LocalBusiness / Hospital structured data. Same NAP as the contact
+       page and the Google Business Profile - keep the three in sync.
+       ------------------------------------------------------------------ -->
+  <script type="application/ld+json">
+  <?= json_encode([
+    '@context'    => 'https://schema.org',
+    '@type'       => 'Hospital',
+    '@id'         => $site_origin . '/#hospital',
+    'name'        => $site_name,
+    'alternateName' => 'Janani Hospital Vijayapura',
+    'url'         => $site_origin . '/',
+    'logo'        => $og_image,
+    'image'       => $og_image,
+    'description' => 'Janani Multispeciality Hospital and Research Centre is a leading multispeciality hospital in Vijayapura, Karnataka, offering IVF and fertility care, obstetrics and gynecology, paediatrics, neonatology, general surgery, orthopedics, urology and 24/7 emergency and critical care.',
+    'telephone'   => '+91-70908-31208',
+    'email'       => 'Jananihospital2018@gmail.com',
+    'priceRange'  => 'INR',
+    'address'     => [
+      '@type'           => 'PostalAddress',
+      'streetAddress'   => 'Beside Karnataka Bank, Near BDA Cross, Jalnagar Main Road, KK Colony',
+      'addressLocality' => 'Vijayapura',
+      'addressRegion'   => 'Karnataka',
+      'postalCode'      => '586109',
+      'addressCountry'  => 'IN',
+    ],
+    'geo' => [
+      '@type'     => 'GeoCoordinates',
+      'latitude'  => 16.8082822,
+      'longitude' => 75.7248957,
+    ],
+    'hasMap' => 'https://maps.google.com/?cid=12670297163372150220',
+    'areaServed' => [
+      ['@type' => 'City',           'name' => 'Vijayapura'],
+      ['@type' => 'AdministrativeArea', 'name' => 'Vijayapura District'],
+      ['@type' => 'AdministrativeArea', 'name' => 'Bagalkot'],
+      ['@type' => 'AdministrativeArea', 'name' => 'Karnataka'],
+    ],
+    'openingHoursSpecification' => [
+      [
+        '@type'     => 'OpeningHoursSpecification',
+        'dayOfWeek' => ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        'opens'     => '00:00',
+        'closes'    => '23:59',
+        'description' => '24/7 Emergency. OPD 8:00 AM - 8:00 PM.',
+      ],
+    ],
+    'availableService' => array_map(
+      function ($s) { return ['@type' => 'MedicalProcedure', 'name' => $s]; },
+      [
+        'IVF and Fertility Treatment', 'Obstetrics and Gynecology', 'Antenatal Care',
+        'Paediatrics', 'Neonatology (NICU)', 'General Medicine', 'General Surgery',
+        'Laparoscopic Surgery', 'Orthopedics', 'Urology', 'Endoscopy', 'Hysteroscopy',
+        'Pain Management', 'Critical Care (ICU)',
+      ]
+    ),
+  ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) ?>
+  </script>
+
+  <!-- ------------------------------------------------------------------
+       Entrance animations are hidden by CSS only while this class is on
+       <html>. If js/reveal.js never loads the class is dropped, so a
+       failed script can no longer leave a page blank.
+       ------------------------------------------------------------------ -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.className = (d.className + ' js-anim').replace(/^\s+/, '');
+      window.setTimeout(function () {
+        if (!window.__revealReady) {
+          d.className = d.className.replace(/\bjs-anim\b/, '').replace(/\s+/g, ' ').trim();
+        }
+      }, 2000);
+    })();
+  </script>
 
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
@@ -55,7 +155,7 @@
       <symbol id="i-alert-triangle" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
       <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
       <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
-      <symbol id="i-baby" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+      <symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5S14.5 8 13 8"/></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
       <symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
       <symbol id="i-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
@@ -80,6 +180,20 @@
       <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
       <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
       <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+      <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+      <symbol id="i-maximize-2" viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
       <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
     </defs>
   </svg>

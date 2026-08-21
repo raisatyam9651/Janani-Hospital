@@ -1,6 +1,6 @@
 <?php
-$page_title = "Our Doctors - Janani Hospital in Vijayapura";
-$page_description = "Highly qualified and experienced medical professionals dedicated to your health and well-being. in Vijayapura.";
+$page_title = "Best Doctors in Vijayapura | Janani Hospital Specialists";
+$page_description = "Meet the gynecologists, fertility specialists, paediatricians, surgeons and orthopedic doctors at Janani Hospital, Vijayapura. Book a consultation today.";
 $page_css  = ['pages.css'];
 $page_name = 'doctors';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

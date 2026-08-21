@@ -1,6 +1,6 @@
 <?php
-$page_title = "Neonatology Department - Janani Hospital in Vijayapura";
-$page_description = "Our Neonatology Department provides specialized care for newborns, especially premature and critically ill infants, with a Level III NICU and expert neonatologists available 24/7. in Vijayapura.";
+$page_title = "NICU and Neonatology in Vijayapura | Janani Hospital";
+$page_description = "Level III NICU in Vijayapura for premature and critically ill newborns, with neonatologists and advanced life support available 24/7 at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

@@ -1,6 +1,6 @@
 <?php
-$page_title = "Health Packages - Janani Hospital in Vijayapura";
-$page_description = "Choose from our comprehensive health check-up packages. in Vijayapura.";
+$page_title = "Health Checkup Packages in Vijayapura | Janani Hospital";
+$page_description = "Affordable master health checkup, women's health and diabetic care packages in Vijayapura. Compare Janani Hospital packages and book your screening today.";
 $page_css  = ['pages.css'];
 $page_name = 'health-packages';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

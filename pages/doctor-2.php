@@ -1,6 +1,6 @@
 <?php
-$page_title = "Dr. Ramesh Kumar - Janani Hospital in Vijayapura";
-$page_description = "Specialized in high-risk pregnancy management and laparoscopic surgeries. in Vijayapura.";
+$page_title = "Dr. Ramesh Kumar | Obstetrician in Vijayapura | Janani Hospital";
+$page_description = "Dr. Ramesh Kumar specialises in high-risk pregnancy care and laparoscopic surgery at Janani Hospital, Vijayapura. Consult today on +91 70908 31208.";
 $page_css  = ['pages.css'];
 $page_name = 'doctor-2';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

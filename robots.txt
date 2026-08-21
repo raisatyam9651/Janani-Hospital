@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Confirmation screens - no search value, and they duplicate each other.
+Disallow: /pages/thank-you.php
+Disallow: /pages/appointment-confirmed.php
+
+Sitemap: https://jananihospitals.com/sitemap.xml

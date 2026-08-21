@@ -1,6 +1,6 @@
 <?php
-$page_title = "IVF & Fertility Center - Janani Hospital in Vijayapura";
-$page_description = "Our IVF &amp; Fertility Center in Hyderabad provides compassionate, expert care with cutting-edge reproductive technologies to help couples fulfill their dream of parenthood. We specialize in personalized fertility treatments featuring high success rates and 24/7 support. in Vijayapura.";
+$page_title = "IVF and Fertility Centre in Vijayapura | Janani Hospital";
+$page_description = "Advanced IVF, ICSI and IUI fertility treatment in Vijayapura with high success rates and personalised care from the specialists at Janani Hospital.";
 $page_css  = ['department.css'];
 $page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

@@ -1,6 +1,6 @@
 <?php
-$page_title = "Book a Lab Test - Janani Hospital in Vijayapura";
-$page_description = "Schedule your diagnostic tests with ease at Janani Hospital. in Vijayapura.";
+$page_title = "Book a Lab Test in Vijayapura | Janani Hospital Diagnostics";
+$page_description = "Schedule blood tests, scans and diagnostic investigations at Janani Hospital, Vijayapura. Accurate reports, trained technicians and easy online booking.";
 $page_css  = ['pages.css'];
 $page_name = 'book-lab-test';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';

@@ -1,6 +1,6 @@
 <?php
-$page_title = "Janani Hospital - World-Class Healthcare in Vijayapura";
-$page_description = "Janani Hospital provides world-class, accessible healthcare services with advanced medical technology and personalized patient care. in Vijayapura.";
+$page_title = "Best Hospital in Vijayapura | Janani Multispeciality Hospital";
+$page_description = "Janani Hospital is a leading multispeciality hospital in Vijayapura offering IVF, gynecology, paediatrics, surgery and 24/7 emergency care. Call +91 70908 31208.";
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main>
@@ -336,8 +336,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <!-- ========================================================================
          PATIENT SUCCESS STORIES
          ======================================================================== -->
-    <section class="testimonials">
-      <div class="shell">        <!-- Review Pixel -->
+    <section class="testimonials" id="reviews">
+      <div class="shell">
+        <div class="section-head section-head--lg">
+          <h2 class="section-title section-title--gap-lg">
+            What Our <span class="section-title__accent">Patients Say</span>
+          </h2>
+          <p class="section-lede section-lede--lg">
+            Real, verified Google reviews from families across Vijayapura and North Karnataka who
+            trusted Janani Hospital with their care.
+          </p>
+        </div>
+
+        <!-- Review Pixel -->
 <script type="text/javascript">
 !function(){var e,t=document;e=function(){if(window.EMRPixel)return console.info("EMR: Pixel already loaded");var e=t.createElement("script");e.defer=!0,e.src="https://cdn2.revw.me/js/pixel.js?t="+864e5*Math.ceil(new Date/864e5);var n=t.getElementsByTagName("script")[0];n.charset="utf-8",n.parentNode.insertBefore(e,n),e.onload=function(){EMRPixel.init("reviewmagnet.in",111)}},"interactive"===t.readyState||"complete"===t.readyState?e():t.addEventListener("DOMContentLoaded",e)}();
 </script><emr-simple-slider widget-id="da02c720-3ce9-4ca4-8280-7cf54ec9615d"></emr-simple-slider>

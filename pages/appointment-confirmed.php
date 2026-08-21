@@ -1,6 +1,7 @@
 <?php
-$page_title = "Thank You - Janani Hospital in Vijayapura";
-$page_description = "Your message has been sent. The Janani Hospital team will get back to you shortly. in Vijayapura.";
+$page_title = "Appointment Confirmed | Janani Hospital, Vijayapura";
+$page_description = "Your appointment request with Janani Hospital, Vijayapura has been received. Our team will call you shortly to confirm your slot.";
+$page_robots = "noindex, follow";
 $page_css  = ['pages.css'];
 $page_name = 'appointment-confirmed';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
