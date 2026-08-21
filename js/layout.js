@@ -16,16 +16,21 @@
   var page = document.body.getAttribute("data-page") || "";
 
   /* ---------------------------------------------------------------------
-     Scroll state. The header is transparent over the top of the home page
-     and turns opaque once scrolled. On every other page it is immediately
-     solid so text is legible over the white page background.
+     Scroll state.
+     - Non-home pages: immediately solid (white bg, dark text) on load.
+     - Home page: transparent at top, becomes solid once scrolled > 50px.
+     - One-way latch: once solid, it NEVER goes transparent again — no
+       "background disappears when scrolling back up" glitch.
      --------------------------------------------------------------------- */
   var isHomePage = (page === "home");
+  var hasBecomesolid = !isHomePage; // non-home pages start already solid
 
   function syncScrollState() {
-    var scrolled = !isHomePage || window.scrollY > SCROLL_THRESHOLD;
-    nav.classList.toggle("is-scrolled", scrolled);
-    nav.classList.toggle("is-solid", scrolled);
+    if (!hasBecomesolid) {
+      hasBecomesolid = window.scrollY > SCROLL_THRESHOLD;
+    }
+    nav.classList.toggle("is-scrolled", hasBecomesolid);
+    nav.classList.toggle("is-solid",    hasBecomesolid);
   }
 
   window.addEventListener("scroll", syncScrollState, { passive: true });
