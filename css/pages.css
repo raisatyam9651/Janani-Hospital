@@ -9,43 +9,48 @@
    The React pages use framer-motion `initial/animate` (on mount) and
    `whileInView` (on scroll). Reproduced with a class toggled by js/reveal.js.
    -------------------------------------------------------------------------- */
-[data-reveal] {
+/* Every rule below is scoped to `.js-anim`, a class the inline script in
+   includes/header.php puts on <html> and REMOVES again if js/reveal.js never
+   reports in. Without that guard a missing/blocked reveal.js left the whole
+   page at opacity:0 — i.e. blank. Content is now visible by default and only
+   hidden while the animation is genuinely able to play. */
+.js-anim [data-reveal] {
   opacity: 0;
   transition: opacity 500ms ease-out, transform 500ms ease-out;
 }
 
-[data-reveal="up"] {
+.js-anim [data-reveal="up"] {
   transform: translateY(20px);
 }
-[data-reveal="up-lg"] {
+.js-anim [data-reveal="up-lg"] {
   transform: translateY(30px);
 }
-[data-reveal="up-xl"] {
+.js-anim [data-reveal="up-xl"] {
   transform: translateY(50px);
 }
-[data-reveal="left"] {
+.js-anim [data-reveal="left"] {
   transform: translateX(-30px);
 }
-[data-reveal="right"] {
+.js-anim [data-reveal="right"] {
   transform: translateX(30px);
 }
-[data-reveal="scale"] {
+.js-anim [data-reveal="scale"] {
   transform: scale(0.9);
 }
-[data-reveal="scale-sm"] {
+.js-anim [data-reveal="scale-sm"] {
   transform: scale(0.95);
 }
-[data-reveal="fade"] {
+.js-anim [data-reveal="fade"] {
   transform: none;
 }
 
-[data-reveal].is-revealed {
+.js-anim [data-reveal].is-revealed {
   opacity: 1;
   transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
+  .js-anim [data-reveal] {
     opacity: 1;
     transform: none;
   }
@@ -119,6 +124,32 @@
 .breadcrumb__item {
   display: flex;
   align-items: center;
+}
+
+/* `.breadcrumb__link` had no rule at all, so the home icon and its label
+   stacked instead of sitting on one line. */
+.breadcrumb__link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray-500);
+  text-decoration: none;
+  transition: color 150ms var(--ease);
+}
+
+.breadcrumb__link:hover {
+  color: var(--emerald-600);
+}
+
+.breadcrumb__link .icon {
+  font-size: 0.875rem;
+}
+
+/* Separator between crumbs. */
+.breadcrumb__item + .breadcrumb__item::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--gray-300);
 }
 
 .breadcrumb__current {
@@ -511,6 +542,7 @@
 
 .blog-card__media {
   position: relative;
+  display: block;
   overflow: hidden;
 }
 
@@ -607,11 +639,18 @@
   overflow: hidden;
 }
 
+.blog-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .blog-card__more {
   display: flex;
   align-items: center;
+  align-self: flex-start;
   font-weight: 700;
   color: var(--emerald-600);
+  text-decoration: none;
   transition: color 150ms var(--ease);
 }
 
@@ -628,6 +667,21 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+/* The article column is much taller than the sidebar once there are more than
+   a few posts, which otherwise leaves a dead right-hand column. Sticking the
+   sidebar keeps search and categories reachable while scrolling. The offset
+   clears the fixed .site-nav bar. */
+@media (min-width: 1024px) {
+  .sidebar {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
 }
 
 .side-card {
@@ -2117,4 +2171,606 @@
   padding: 0 1.5rem 1.5rem;
   line-height: 1.625;
   color: var(--gray-600);
+}
+
+/* ==========================================================================
+   BLOG POST (single article)
+   Rendered by includes/blog-post.php. Sits inside .page__inner--narrow so the
+   measure stays around 70 characters on a desktop screen.
+   ========================================================================== */
+.post {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (min-width: 768px) {
+  .post {
+    padding: 3rem;
+    border-radius: 3rem;
+  }
+}
+
+.post__head {
+  text-align: center;
+}
+
+.post__tag {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: var(--emerald-600);
+  border-radius: var(--radius-full);
+  transition: background-color 150ms var(--ease);
+}
+
+.post__tag:hover {
+  background-color: var(--emerald-700);
+}
+
+.post__title {
+  margin-bottom: 1.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+@media (min-width: 768px) {
+  .post__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+.post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--gray-500);
+}
+
+.post__meta span {
+  display: flex;
+  align-items: center;
+}
+
+.post__meta .icon {
+  margin-right: 0.375rem;
+  color: var(--emerald-600);
+}
+
+.post__meta a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.post__meta a:hover {
+  color: var(--emerald-600);
+  border-bottom-color: var(--emerald-600);
+}
+
+.post__hero {
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: var(--radius-3xl);
+  background-color: var(--gray-50);
+}
+
+.post__hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 26rem;
+  object-fit: cover;
+}
+
+/* --- Article body --------------------------------------------------------- */
+.post__body {
+  color: var(--gray-600);
+  line-height: 1.75;
+}
+
+.post__body > * + * {
+  margin-top: 1.25rem;
+}
+
+.post__body p {
+  font-size: 1.0625rem;
+}
+
+.post__body h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post__body h3 {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post__body ul,
+.post__body ol {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.post__body ul {
+  list-style-type: disc;
+}
+
+.post__body ol {
+  list-style-type: decimal;
+}
+
+.post__body li::marker {
+  color: var(--emerald-600);
+}
+
+.post__body strong {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.post__body a {
+  color: var(--emerald-700);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.post__body a:hover {
+  color: var(--emerald-600);
+}
+
+.post__lede {
+  font-size: 1.1875rem !important;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+/* Highlighted aside - "when to seek help", key numbers, safety notes. */
+.post__callout {
+  padding: 1.5rem;
+  background-color: var(--emerald-50);
+  border: 1px solid var(--emerald-100);
+  border-left: 4px solid var(--emerald-600);
+  border-radius: var(--radius-2xl);
+}
+
+.post__callout h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--emerald-700) !important;
+}
+
+.post__callout .icon {
+  flex: none;
+  color: var(--emerald-600);
+}
+
+.post__callout > * + * {
+  margin-top: 0.75rem;
+}
+
+.post__callout--warn {
+  background-color: #fff7ed;
+  border-color: #fed7aa;
+  border-left-color: #ea580c;
+}
+
+.post__callout--warn h3 {
+  color: #c2410c !important;
+}
+
+.post__callout--warn .icon {
+  color: #ea580c;
+}
+
+/* Schedules and comparison tables inside an article. */
+.post__table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-2xl);
+}
+
+.post__table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  text-align: left;
+}
+
+.post__table th,
+.post__table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+.post__table thead th {
+  font-weight: 700;
+  color: var(--gray-900);
+  background-color: var(--gray-50);
+  white-space: nowrap;
+}
+
+.post__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.post__table td:first-child {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* --- Related departments -------------------------------------------------- */
+.post__links {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.post__links-title {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.post__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--teal-800);
+  text-decoration: none;
+  background-color: var(--teal-50);
+  border: 1px solid var(--teal-100);
+  border-radius: var(--radius-full);
+  transition: all 150ms var(--ease);
+}
+
+.post__chip .icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 150ms var(--ease);
+}
+
+.post__chip:hover {
+  color: #ffffff;
+  background-color: var(--teal-600);
+  border-color: var(--teal-600);
+}
+
+.post__chip:hover .icon {
+  transform: translateX(0.25rem);
+}
+
+/* --- Byline card ---------------------------------------------------------- */
+.post__author {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+}
+
+.post__author-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: #ffffff;
+  background-color: var(--emerald-600);
+  border-radius: var(--radius-full);
+}
+
+.post__author-label {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+}
+
+.post__author-name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post__author-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post__author-name a:hover {
+  color: var(--emerald-600);
+}
+
+.post__author-role {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--gray-500);
+}
+
+.post__disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  font-style: italic;
+  color: var(--gray-400);
+}
+
+.post__disclaimer a {
+  color: var(--gray-500);
+  text-decoration: underline;
+}
+
+/* --- Appointment CTA ------------------------------------------------------ */
+.post__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--teal-700), var(--emerald-600));
+  border-radius: var(--radius-3xl);
+}
+
+@media (min-width: 768px) {
+  .post__cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.post__cta-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.post__cta-text {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  color: rgb(255 255 255 / 0.85);
+}
+
+.post__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.post__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  transition: all 150ms var(--ease);
+}
+
+.post__cta-btn .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.post__cta-btn--primary {
+  color: var(--teal-800);
+  background-color: #ffffff;
+}
+
+.post__cta-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.post__cta-btn--ghost {
+  color: #ffffff;
+  border: 1px solid rgb(255 255 255 / 0.6);
+}
+
+.post__cta-btn--ghost:hover {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+/* --- Related posts -------------------------------------------------------- */
+.post-related {
+  margin-top: 4rem;
+}
+
+.post-related__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post-related__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .post-related__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.post-related__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: all 300ms var(--ease);
+}
+
+.post-related__card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.post-related__card img {
+  width: 100%;
+  height: 9rem;
+  object-fit: cover;
+}
+
+.post-related__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.post-related__tag {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--emerald-600);
+}
+
+.post-related__heading {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.post-related__more {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--emerald-600);
+}
+
+.post-related__more .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.post-related__all {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.post-related__all a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--teal-700);
+  text-decoration: none;
+}
+
+.post-related__all a:hover {
+  color: var(--emerald-600);
+}
+
+/* ==========================================================================
+   BLOG LISTING - search + category filter (js/blog.js)
+   ========================================================================== */
+.side-list button.is-active {
+  color: var(--emerald-600);
+  font-weight: 700;
+}
+
+.side-list button.is-active .side-list__count {
+  color: #ffffff;
+  background-color: var(--emerald-600);
+}
+
+.side-list__clear button {
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+}
+
+.blog-empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--gray-500);
+  background-color: #ffffff;
+  border: 1px dashed var(--gray-200);
+  border-radius: var(--radius-3xl);
+}
+
+.blog-empty__title {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.blog-empty__reset {
+  margin-top: 1rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--emerald-600);
+  border-radius: var(--radius-full);
+  transition: background-color 150ms var(--ease);
+}
+
+.blog-empty__reset:hover {
+  background-color: var(--emerald-700);
 }

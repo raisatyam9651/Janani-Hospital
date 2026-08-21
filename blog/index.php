@@ -1,8 +1,18 @@
 <?php
 $page_title = "Health Tips & Latest Updates - Janani Hospital in Vijayapura";
-$page_description = "Stay informed with the latest medical insights, health advice, and news from Janani Hospitals. in Vijayapura.";
+$page_description = "Health guides and hospital news from Janani Multispeciality Hospital and Research Centre, Vijayapura - women's health, fertility, pediatrics, surgery and preventive care.";
 $page_css  = ['pages.css'];
+$page_js   = ['blog.js'];
 $page_name = 'blog';
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/blog-posts.php';
+$categories = blog_category_counts($BLOG_POSTS, $BLOG_CATEGORIES);
+
+/* A category may arrive in the query string (from a post's tag link). The
+   filtering itself is done client-side by js/blog.js; this only decides which
+   button starts out active. */
+$active_category = isset($_GET['category']) ? $_GET['category'] : '';
+
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">
@@ -10,7 +20,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <div class="breadcrumb__inner">
         <ol class="breadcrumb__list">
           <li class="breadcrumb__item">
-            <span class="breadcrumb__current"><svg class="icon"><use href="#i-home"></use></svg><span>Home</span></span>
+            <a href="/" class="breadcrumb__link"><svg class="icon"><use href="#i-home"></use></svg><span>Home</span></a>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__current"><span>Blog</span></span>
           </li>
         </ol>
       </div>
@@ -22,191 +35,56 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           Health Tips &amp; <span class="accent-emerald">Latest Updates</span>
         </h1>
         <p class="page__lede" data-reveal="up" data-reveal-on="mount" data-reveal-delay="100">
-          Stay informed with the latest medical insights, health advice, and news from Janani Hospitals.
+          Practical health guides written by our doctors, and news from Janani Multispeciality Hospital and Research
+          Centre, Vijayapura.
         </p>
       </div>
 
       <div class="blog-layout">
-        <div class="blog-layout__main">
-          <article class="blog-card" data-reveal="up-lg" data-reveal-delay="0">
+        <div class="blog-layout__main" data-blog-list>
+          <?php $delay = 0; ?>
+          <?php foreach ($BLOG_POSTS as $slug => $post): $url = blog_url($slug); ?>
+          <article class="blog-card"
+            data-blog-card
+            data-category="<?= htmlspecialchars($post['category']) ?>"
+            data-search="<?= htmlspecialchars(strtolower($post['title'] . ' ' . $post['excerpt'] . ' ' . $post['category'] . ' ' . $post['author'])) ?>"
+            data-reveal="up-lg" data-reveal-delay="<?= $delay ?>">
             <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Understanding Women's Health: Essential Checkups">
-                <span class="blog-card__tag">Women's Health</span>
-              </div>
+              <a class="blog-card__media" href="<?= $url ?>" aria-hidden="true" tabindex="-1">
+                <img src="<?= htmlspecialchars($post['image']) ?>" alt="<?= htmlspecialchars($post['image_alt']) ?>" loading="lazy" width="800" height="600">
+                <span class="blog-card__tag"><?= htmlspecialchars($post['category']) ?></span>
+              </a>
               <div class="blog-card__body">
                 <div>
                   <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 10, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Janani S.</span>
+                    <span><svg class="icon"><use href="#i-calendar"></use></svg> <?= htmlspecialchars($post['date_display']) ?></span>
+                    <span><svg class="icon"><use href="#i-users"></use></svg> <?= htmlspecialchars($post['author']) ?></span>
+                    <span><svg class="icon"><use href="#i-clock"></use></svg> <?= (int)$post['read_time'] ?> min</span>
                   </div>
-                  <h2 class="blog-card__title">Understanding Women's Health: Essential Checkups</h2>
-                  <p class="blog-card__excerpt">Regular health checkups are crucial for women at every stage of life. Learn about the essential tests and when to schedule them.</p>
+                  <h2 class="blog-card__title">
+                    <a href="<?= $url ?>"><?= htmlspecialchars($post['title']) ?></a>
+                  </h2>
+                  <p class="blog-card__excerpt"><?= htmlspecialchars($post['excerpt']) ?></p>
                 </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+                <a href="<?= $url ?>" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
               </div>
             </div>
           </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="100">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Modern Advances in IVF Technology">
-                <span class="blog-card__tag">Fertility</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 05, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Ramesh Kumar</span>
-                  </div>
-                  <h2 class="blog-card__title">Modern Advances in IVF Technology</h2>
-                  <p class="blog-card__excerpt">In vitro fertilization has come a long way. Discover the latest techniques that are improving success rates for couples.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="200">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1536640712247-c45474d8598b?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Pediatric Care: Common Childhood Illnesses">
-                <span class="blog-card__tag">Pediatrics</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> April 28, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Priya Dharshini</span>
-                  </div>
-                  <h2 class="blog-card__title">Pediatric Care: Common Childhood Illnesses</h2>
-                  <p class="blog-card__excerpt">A guide for parents on identifying and managing common illnesses in children, and when to seek professional medical help.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="0">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Understanding Women's Health: Essential Checkups">
-                <span class="blog-card__tag">Women's Health</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 10, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Janani S.</span>
-                  </div>
-                  <h2 class="blog-card__title">Understanding Women's Health: Essential Checkups</h2>
-                  <p class="blog-card__excerpt">Regular health checkups are crucial for women at every stage of life. Learn about the essential tests and when to schedule them.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="100">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Modern Advances in IVF Technology">
-                <span class="blog-card__tag">Fertility</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 05, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Ramesh Kumar</span>
-                  </div>
-                  <h2 class="blog-card__title">Modern Advances in IVF Technology</h2>
-                  <p class="blog-card__excerpt">In vitro fertilization has come a long way. Discover the latest techniques that are improving success rates for couples.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="200">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1536640712247-c45474d8598b?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Pediatric Care: Common Childhood Illnesses">
-                <span class="blog-card__tag">Pediatrics</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> April 28, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Priya Dharshini</span>
-                  </div>
-                  <h2 class="blog-card__title">Pediatric Care: Common Childhood Illnesses</h2>
-                  <p class="blog-card__excerpt">A guide for parents on identifying and managing common illnesses in children, and when to seek professional medical help.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="0">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Understanding Women's Health: Essential Checkups">
-                <span class="blog-card__tag">Women's Health</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 10, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Janani S.</span>
-                  </div>
-                  <h2 class="blog-card__title">Understanding Women's Health: Essential Checkups</h2>
-                  <p class="blog-card__excerpt">Regular health checkups are crucial for women at every stage of life. Learn about the essential tests and when to schedule them.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="100">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Modern Advances in IVF Technology">
-                <span class="blog-card__tag">Fertility</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> May 05, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Ramesh Kumar</span>
-                  </div>
-                  <h2 class="blog-card__title">Modern Advances in IVF Technology</h2>
-                  <p class="blog-card__excerpt">In vitro fertilization has come a long way. Discover the latest techniques that are improving success rates for couples.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
-<article class="blog-card" data-reveal="up-lg" data-reveal-delay="200">
-            <div class="blog-card__row">
-              <div class="blog-card__media">
-                <img src="https://images.unsplash.com/photo-1536640712247-c45474d8598b?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Pediatric Care: Common Childhood Illnesses">
-                <span class="blog-card__tag">Pediatrics</span>
-              </div>
-              <div class="blog-card__body">
-                <div>
-                  <div class="blog-card__meta">
-                    <span><svg class="icon"><use href="#i-calendar"></use></svg> April 28, 2026</span>
-                    <span><svg class="icon"><use href="#i-user"></use></svg> Dr. Priya Dharshini</span>
-                  </div>
-                  <h2 class="blog-card__title">Pediatric Care: Common Childhood Illnesses</h2>
-                  <p class="blog-card__excerpt">A guide for parents on identifying and managing common illnesses in children, and when to seek professional medical help.</p>
-                </div>
-                <button type="button" class="blog-card__more">Read More <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
-              </div>
-            </div>
-          </article>
+          <?php $delay = $delay >= 200 ? 0 : $delay + 100; endforeach; ?>
+
+          <div class="blog-empty" data-blog-empty hidden>
+            <p class="blog-empty__title">No articles match that search.</p>
+            <p>Try a different word or category.</p>
+            <p><button type="button" class="blog-empty__reset" data-blog-reset>Show all articles</button></p>
+          </div>
         </div>
 
         <aside class="sidebar">
           <div class="side-card">
             <h3 class="side-card__title">Search</h3>
             <div class="side-search">
-              <input type="text" id="blog-search" aria-label="Search articles"
-                placeholder="Search articles...">
+              <input type="search" id="blog-search" aria-label="Search articles"
+                placeholder="Search articles..." autocomplete="off">
               <svg class="icon"><use href="#i-search"></use></svg>
             </div>
           </div>
@@ -214,42 +92,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <div class="side-card">
             <h3 class="side-card__title">Categories</h3>
             <ul class="side-list">
+              <?php foreach ($categories as $category => $count): ?>
               <li>
-                <button type="button">
-                  <span>General Medicine</span>
-                  <span class="side-list__count">12</span>
+                <button type="button" data-blog-category="<?= htmlspecialchars($category) ?>"
+                  class="<?= $active_category === $category ? 'is-active' : '' ?>"
+                  aria-pressed="<?= $active_category === $category ? 'true' : 'false' ?>">
+                  <span><?= htmlspecialchars($category) ?></span>
+                  <span class="side-list__count"><?= (int)$count ?></span>
                 </button>
               </li>
-              <li>
-                <button type="button">
-                  <span>Women's Health</span>
-                  <span class="side-list__count">12</span>
+              <?php endforeach; ?>
+              <li class="side-list__clear">
+                <button type="button" data-blog-reset>
+                  <span>Show all articles</span>
+                  <span class="side-list__count"><?= count($BLOG_POSTS) ?></span>
                 </button>
               </li>
-              <li>
-                <button type="button">
-                  <span>Pediatrics</span>
-                  <span class="side-list__count">12</span>
-                </button>
-              </li>
-              <li>
-                <button type="button">
-                  <span>Fertility</span>
-                  <span class="side-list__count">12</span>
-                </button>
-              </li>
-              <li>
-                <button type="button">
-                  <span>Surgery</span>
-                  <span class="side-list__count">12</span>
-                </button>
-              </li>
-              <li>
-                <button type="button">
-                  <span>Wellness</span>
-                  <span class="side-list__count">12</span>
-                </button>
-              </li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3 class="side-card__title">Need to see a doctor?</h3>
+            <ul class="side-list">
+              <li><a href="/pages/book-appointment.php" class="blog-card__more">Book an appointment <svg class="icon"><use href="#i-arrow-right"></use></svg></a></li>
+              <li><a href="/pages/health-packages.php" class="blog-card__more">Health checkup packages <svg class="icon"><use href="#i-arrow-right"></use></svg></a></li>
+              <li><a href="/pages/doctors.php" class="blog-card__more">Meet our doctors <svg class="icon"><use href="#i-arrow-right"></use></svg></a></li>
+              <li><a href="tel:+917090831208" class="blog-card__more">24/7 helpline: +91 70908 31208 <svg class="icon"><use href="#i-phone"></use></svg></a></li>
             </ul>
           </div>
 
@@ -258,10 +126,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <p class="newsletter__text">
               Subscribe to our newsletter for weekly health tips and hospital updates.
             </p>
-            <form class="newsletter__form">
-              <input type="email" id="newsletter-email" aria-label="Your email address"
+            <form class="newsletter__form" action="https://app.formester.com/forms/ZU90MDpYm/submissions" method="POST">
+              <input type="hidden" name="form_type" value="newsletter">
+              <input type="email" id="newsletter-email" name="email" required aria-label="Your email address"
                 placeholder="Your email address">
-              <button type="button">Subscribe Now</button>
+              <button type="submit">Subscribe Now</button>
             </form>
           </div>
         </aside>
@@ -269,5 +138,30 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     </div>
   </main>
 
-  
+  <script type="application/ld+json">
+  <?php
+    $blog_items = [];
+    $position = 1;
+    foreach ($BLOG_POSTS as $slug => $post) {
+      $blog_items[] = [
+        '@type'    => 'ListItem',
+        'position' => $position++,
+        'url'      => $site_origin . blog_url($slug),
+        'name'     => $post['title'],
+      ];
+    }
+    echo json_encode([
+      '@context'        => 'https://schema.org',
+      '@type'           => 'Blog',
+      '@id'             => $site_origin . '/blog/#blog',
+      'name'            => 'Janani Hospital Health Blog',
+      'description'     => $page_description,
+      'url'             => $site_origin . '/blog/',
+      'inLanguage'      => 'en-IN',
+      'publisher'       => ['@type' => 'Organization', 'name' => $site_name, 'url' => $site_origin . '/'],
+      'mainEntity'      => ['@type' => 'ItemList', 'itemListElement' => $blog_items],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+  ?>
+  </script>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
