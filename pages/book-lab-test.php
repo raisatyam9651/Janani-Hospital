@@ -2,6 +2,7 @@
 $page_title = "Book a Lab Test in Vijayapura | Janani Hospital Diagnostics";
 $page_description = "Schedule blood tests, scans and diagnostic investigations at Janani Hospital, Vijayapura. Accurate reports, trained technicians and easy online booking.";
 $page_css  = ['pages.css'];
+$page_js   = ['lab-test.js'];
 $page_name = 'book-lab-test';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -13,7 +14,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           <p class="lab__lede">Schedule your diagnostic tests with ease.</p>
         </div>
 
-        <form class="lab-form" data-lab-form>
+        <form class="lab-form" data-lab-form accept-charset="UTF-8"
+              action="https://app.formester.com/forms/ZU90MDpYm/submissions" method="POST">
+          <input type="hidden" name="form_type" value="lab_test">
           <div>
             <label for="name" class="lab-label">Full Name</label>
             <div class="lab-control">

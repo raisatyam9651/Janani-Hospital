@@ -2,6 +2,7 @@
 $page_title = "Book Doctor Appointment Online | Janani Hospital Vijayapura";
 $page_description = "Book an appointment with a specialist at Janani Hospital, Vijayapura in under a minute. Instant confirmation, OPD 8 AM to 8 PM, 24/7 emergency care.";
 $page_css  = ['pages.css'];
+$page_js   = ['appointment.js'];
 $page_name = 'book-appointment';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -56,7 +57,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
 
           <div class="appt__form-col">
-            <form class="appt-form" data-appointment-form>
+            <form class="appt-form" data-appointment-form accept-charset="UTF-8"
+              action="https://app.formester.com/forms/ZU90MDpYm/submissions" method="POST">
+              <input type="hidden" name="form_type" value="appointment_page">
               <div class="appt-form__row">
                 <div class="appt-field">
                   <label for="service" class="appt-field__label">

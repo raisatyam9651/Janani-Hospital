@@ -80,6 +80,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               <h3 class="contact-panel__title">Send us a Message</h3>
               <form accept-charset="UTF-8" action="https://app.formester.com/forms/ZU90MDpYm/submissions"
                 method="POST" class="contact-form">
+                <input type="hidden" name="form_type" value="contact">
                 <div class="contact-form__row">
                 <div>
                   <label for="name" class="contact-label">Full Name *</label>
