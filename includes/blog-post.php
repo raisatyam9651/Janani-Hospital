@@ -62,7 +62,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
         </header>
 
-        <figure class="post__hero" data-reveal="up" data-reveal-on="mount" data-reveal-delay="100">
+        <figure class="post__hero<?= blog_image_contain($post) ? ' post__hero--contain' : '' ?>"
+          data-reveal="up" data-reveal-on="mount" data-reveal-delay="100">
           <img src="<?= htmlspecialchars($post['image']) ?>" alt="<?= htmlspecialchars($post['image_alt']) ?>" width="1200" height="675">
         </figure>
 
@@ -124,7 +125,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <h2 class="post-related__title" id="post-related-title">Continue reading</h2>
         <div class="post-related__grid">
           <?php foreach ($related as $rel_slug => $rel): ?>
-          <a class="post-related__card" href="<?= htmlspecialchars(blog_url($rel_slug)) ?>">
+          <a class="post-related__card<?= blog_image_contain($rel) ? ' post-related__card--contain' : '' ?>"
+            href="<?= htmlspecialchars(blog_url($rel_slug)) ?>">
             <img src="<?= htmlspecialchars($rel['image']) ?>" alt="<?= htmlspecialchars($rel['title']) ?>" loading="lazy" width="400" height="260">
             <div class="post-related__body">
               <span class="post-related__tag"><?= htmlspecialchars($rel['category']) ?></span>

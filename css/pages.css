@@ -2774,3 +2774,36 @@
 .blog-empty__reset:hover {
   background-color: var(--emerald-700);
 }
+
+/* ==========================================================================
+   DOCUMENT IMAGES (image_fit => 'contain')
+   Certificates, newspaper pages and award posters carry their meaning in the
+   text printed on them. Cropping one to fill a card leaves an unreadable
+   slice, so these letterbox on a neutral ground instead of cropping. Applied
+   in all three places a post image appears: listing card, hero, related card.
+   ========================================================================== */
+.blog-card__media--contain {
+  background-color: var(--gray-50);
+}
+
+.blog-card__media--contain img {
+  object-fit: contain;
+  padding: 0.75rem;
+}
+
+/* The zoom-on-hover reads as a wobble on a letterboxed document. */
+.blog-card:hover .blog-card__media--contain img {
+  transform: none;
+}
+
+.post__hero--contain img {
+  object-fit: contain;
+  max-height: 30rem;
+  padding: 0.75rem;
+}
+
+.post-related__card--contain img {
+  object-fit: contain;
+  padding: 0.5rem;
+  background-color: var(--gray-50);
+}

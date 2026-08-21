@@ -14,8 +14,12 @@
         $post_body, then include includes/blog-post.php. Copy an existing post.
 
    Text here is stored RAW (plain apostrophes and ampersands); every value is
-   escaped at the point it is printed. Image paths are the one exception —
-   spaces are %20-encoded to match the rest of the site.
+   escaped at the point it is printed. Set 'image_fit' => 'contain' when the
+   image is a document (certificate, newspaper page) that a cover-crop would
+   destroy; photographs omit it and crop to fill.
+
+   Image paths are the one exception — spaces are %20-encoded to match the
+   rest of the site.
    ========================================================================== */
 
 /* Sidebar order. Counts are computed from the posts, never hard-coded. */
@@ -195,6 +199,7 @@ $BLOG_POSTS = [
     'author_role'  => 'Hospital News',
     'author_url'   => '/pages/about.php',
     'image'        => '/assets/images/homepage/awards.jpeg',
+    'image_fit'    => 'contain',
     'image_alt'    => "Janani Hospital team with the Excellence in Women's Healthcare award",
     'read_time'    => 4,
     'excerpt'      => 'Recognition for our obstetrics, gynecology and fertility teams - and what the award reflects about maternity care in Vijayapura today.',
@@ -216,6 +221,7 @@ $BLOG_POSTS = [
     'author_role'  => 'Hospital News',
     'author_url'   => '/pages/about.php',
     'image'        => '/assets/images/homepage/awards3.jpeg',
+    'image_fit'    => 'contain',
     'image_alt'    => 'Janani Hospital honoured at the Healthcare Excellence Awards',
     'read_time'    => 4,
     'excerpt'      => 'Janani Multispeciality Hospital and Research Centre is honoured for clinical quality and patient outcomes across North Karnataka.',
@@ -237,6 +243,7 @@ $BLOG_POSTS = [
     'author_role'  => 'Hospital News',
     'author_url'   => '/pages/about.php',
     'image'        => '/assets/images/homepage/awards1.jpeg',
+    'image_fit'    => 'contain',
     'image_alt'    => 'Outstanding Patient Care Recognition presented to Janani Hospital by the Medical Board of India',
     'read_time'    => 4,
     'excerpt'      => 'The Medical Board of India recognises our 24/7 emergency, critical care and nursing teams for outstanding patient care.',
@@ -257,6 +264,14 @@ $BLOG_POSTS = [
  */
 function blog_url($slug) {
   return '/blog/' . $slug . '.php';
+}
+
+/**
+ * True when a post's image is a document (certificate, newspaper page) that a
+ * cover-crop would destroy, so it is letterboxed on a neutral ground instead.
+ */
+function blog_image_contain(array $post) {
+  return isset($post['image_fit']) && $post['image_fit'] === 'contain';
 }
 
 /**

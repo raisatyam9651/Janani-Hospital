@@ -50,7 +50,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             data-search="<?= htmlspecialchars(strtolower($post['title'] . ' ' . $post['excerpt'] . ' ' . $post['category'] . ' ' . $post['author'])) ?>"
             data-reveal="up-lg" data-reveal-delay="<?= $delay ?>">
             <div class="blog-card__row">
-              <a class="blog-card__media" href="<?= $url ?>" aria-hidden="true" tabindex="-1">
+              <a class="blog-card__media<?= blog_image_contain($post) ? ' blog-card__media--contain' : '' ?>"
+                href="<?= $url ?>" aria-hidden="true" tabindex="-1">
                 <img src="<?= htmlspecialchars($post['image']) ?>" alt="<?= htmlspecialchars($post['image_alt']) ?>" loading="lazy" width="800" height="600">
                 <span class="blog-card__tag"><?= htmlspecialchars($post['category']) ?></span>
               </a>
