@@ -16,11 +16,14 @@
   var page = document.body.getAttribute("data-page") || "";
 
   /* ---------------------------------------------------------------------
-     Scroll state. The header is transparent over the top of every page and
-     turns opaque once scrolled - it is not route-aware.
+     Scroll state. The header is transparent over the top of the home page
+     and turns opaque once scrolled. On every other page it is immediately
+     solid so text is legible over the white page background.
      --------------------------------------------------------------------- */
+  var isHomePage = (page === "home");
+
   function syncScrollState() {
-    var scrolled = window.scrollY > SCROLL_THRESHOLD;
+    var scrolled = !isHomePage || window.scrollY > SCROLL_THRESHOLD;
     nav.classList.toggle("is-scrolled", scrolled);
     nav.classList.toggle("is-solid", scrolled);
   }

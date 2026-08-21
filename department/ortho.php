@@ -1,6 +1,8 @@
 <?php
 $page_title = "Orthopedics Department - Janani Hospital in Vijayapura";
 $page_description = "Our Orthopedics Department provides comprehensive care for bone, joint, and musculoskeletal conditions with advanced surgical techniques and world-class rehabilitation services. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

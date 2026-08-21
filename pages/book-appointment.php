@@ -1,6 +1,8 @@
 <?php
 $page_title = "Book an Appointment - Janani Hospital in Vijayapura";
 $page_description = "Book your appointment online and receive instant confirmation via email. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'book-appointment';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

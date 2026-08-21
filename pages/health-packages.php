@@ -1,6 +1,8 @@
 <?php
 $page_title = "Health Packages - Janani Hospital in Vijayapura";
 $page_description = "Choose from our comprehensive health check-up packages. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'health-packages';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="packages-page">

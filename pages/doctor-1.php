@@ -1,6 +1,8 @@
 <?php
 $page_title = "Dr. Janani Ramesh - Janani Hospital in Vijayapura";
 $page_description = "Expert in reproductive medicine and advanced IVF procedures with a high success rate. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'doctor-1';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

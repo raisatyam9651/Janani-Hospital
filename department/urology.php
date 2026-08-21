@@ -1,6 +1,8 @@
 <?php
 $page_title = "Urology Department - Janani Hospital in Vijayapura";
 $page_description = "Our Urology Department provides comprehensive care for urinary tract and male reproductive system disorders with advanced diagnostic and treatment facilities. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

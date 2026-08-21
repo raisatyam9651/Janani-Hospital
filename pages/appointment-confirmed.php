@@ -1,6 +1,8 @@
 <?php
 $page_title = "Thank You - Janani Hospital in Vijayapura";
 $page_description = "Your message has been sent. The Janani Hospital team will get back to you shortly. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'appointment-confirmed';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="thanks">

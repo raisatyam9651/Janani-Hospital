@@ -1,6 +1,8 @@
 <?php
 $page_title = "General Medicine - Janani Hospital in Vijayapura";
 $page_description = "Our General Medicine department provides comprehensive primary care, focusing on prevention, diagnosis, and treatment of a wide range of health issues. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

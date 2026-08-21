@@ -1,6 +1,8 @@
 <?php
 $page_title = "Antenatal Care (ANC) - Janani Hospital in Vijayapura";
 $page_description = "Our Antenatal Care program provides comprehensive care during pregnancy, ensuring the well-being of both mother and baby with advanced monitoring and personalized support. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

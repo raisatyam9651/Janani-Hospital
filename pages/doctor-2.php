@@ -1,6 +1,8 @@
 <?php
 $page_title = "Dr. Ramesh Kumar - Janani Hospital in Vijayapura";
 $page_description = "Specialized in high-risk pregnancy management and laparoscopic surgeries. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'doctor-2';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

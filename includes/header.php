@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -33,10 +33,16 @@
 
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/home.css">
+  <?php if (isset($page_css)): ?>
+    <?php foreach ((array)$page_css as $_css): ?>
+      <link rel="stylesheet" href="/css/<?= htmlspecialchars($_css) ?>">
+    <?php endforeach; ?>
+  <?php else: ?>
+    <link rel="stylesheet" href="/css/home.css">
+  <?php endif; ?>
 </head>
 
-<body data-page="home" data-root="">
+<body data-page="<?= isset($page_name) ? htmlspecialchars($page_name) : (isset($page_css) ? 'page' : 'home') ?>" data-root="">
 
   <!-- ==========================================================================
        Feather icon sprite. Inlined (rather than referenced from an external

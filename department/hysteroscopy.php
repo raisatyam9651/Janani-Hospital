@@ -1,6 +1,8 @@
 <?php
 $page_title = "Hysteroscopy Department - Janani Hospital in Vijayapura";
 $page_description = "Our Hysteroscopy Department offers advanced minimally invasive procedures for diagnosing and treating uterine conditions with precision and minimal recovery time. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

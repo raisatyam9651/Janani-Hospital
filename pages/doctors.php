@@ -1,6 +1,8 @@
 <?php
 $page_title = "Our Doctors - Janani Hospital in Vijayapura";
 $page_description = "Highly qualified and experienced medical professionals dedicated to your health and well-being. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'doctors';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

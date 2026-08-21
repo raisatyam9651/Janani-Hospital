@@ -1,6 +1,8 @@
 <?php
 $page_title = "Careers - Janani Hospital in Vijayapura";
 $page_description = "Join our exceptional team. Explore current openings at Janani Hospital. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'careers';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

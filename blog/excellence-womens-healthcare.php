@@ -1,6 +1,8 @@
 <?php
 $page_title = "Excellence in Women's Healthcare - Janani Hospital in Vijayapura";
 $page_description = "How Janani Hospital collects, uses and safeguards your personal and medical information. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'blog';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

@@ -1,6 +1,8 @@
 <?php
 $page_title = "Contact Us - Janani Hospital in Vijayapura";
 $page_description = "Have questions about your health? Our expert team is here to help you 24/7 with compassionate care and medical excellence. in Vijayapura.";
+$page_css  = ['marketing.css'];
+$page_name = 'contact';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="mk">

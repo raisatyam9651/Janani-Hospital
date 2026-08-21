@@ -1,6 +1,8 @@
 <?php
 $page_title = "Health Tips & Latest Updates - Janani Hospital in Vijayapura";
 $page_description = "Stay informed with the latest medical insights, health advice, and news from Janani Hospitals. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'blogs';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

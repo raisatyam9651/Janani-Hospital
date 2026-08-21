@@ -1,6 +1,8 @@
 <?php
 $page_title = "Dr. Suresh Babu - Janani Hospital in Vijayapura";
 $page_description = "Specialist in joint replacement and sports medicine. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'doctor-4';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="page">

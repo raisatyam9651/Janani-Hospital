@@ -1,6 +1,8 @@
 <?php
 $page_title = "Obstetrics & Gynecology - Janani Hospital in Vijayapura";
 $page_description = "Our Obstetrics &amp; Gynecology department provides comprehensive women's healthcare with advanced maternity care, gynecological treatments, and specialized reproductive health services. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

@@ -1,6 +1,8 @@
 <?php
 $page_title = "About Janani Hospital in Vijayapura";
 $page_description = "Pioneering excellence in healthcare for over two decades with compassionate care and cutting-edge technology. in Vijayapura.";
+$page_css  = ['marketing.css'];
+$page_name = 'about';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="mk">

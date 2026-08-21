@@ -1,6 +1,8 @@
 <?php
 $page_title = "Critical Care Department - Janani Hospital in Vijayapura";
 $page_description = "Our Critical Care Department provides comprehensive intensive care for critically ill patients with advanced monitoring and life support systems, ensuring the highest standards of emergency medical care and patient recovery. in Vijayapura.";
+$page_css  = ['department.css'];
+$page_name = 'department';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="dept-page">

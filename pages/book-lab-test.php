@@ -1,6 +1,8 @@
 <?php
 $page_title = "Book a Lab Test - Janani Hospital in Vijayapura";
 $page_description = "Schedule your diagnostic tests with ease at Janani Hospital. in Vijayapura.";
+$page_css  = ['pages.css'];
+$page_name = 'book-lab-test';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 <main class="lab">
