@@ -295,6 +295,7 @@
 /* --- Department search --------------------------------------------------- */
 .hero__search {
   position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -532,6 +533,12 @@
   margin-top: 2rem;
 }
 
+@media (max-width: 1023px) {
+  .hero__services .hero-service:last-child {
+    grid-column: span 2;
+  }
+}
+
 @media (min-width: 640px) {
   .hero__services {
     gap: 1rem;
@@ -540,7 +547,7 @@
 
 @media (min-width: 1024px) {
   .hero__services {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 3rem;
   }
 }

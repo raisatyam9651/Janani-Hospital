@@ -54,17 +54,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </div>
 
         <div class="hero__services">
-          <a href="/" class="hero-service">
-            <div class="hero-service__row">
-              <div class="hero-service__group">
-                <span class="hero-service__icon"><svg class="icon">
-                    <use href="#i-check-circle"></use>
-                  </svg></span>
-                <span class="hero-service__title">Health Check</span>
-              </div>
-            </div>
-          </a>
-          <a href="/" class="hero-service">
+          <a href="/pages/contact.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
@@ -74,7 +64,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               </div>
             </div>
           </a>
-          <a href="/" class="hero-service">
+          <a href="/pages/contact.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
@@ -84,7 +74,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               </div>
             </div>
           </a>
-          <a href="contact.php" class="hero-service">
+          <a href="/pages/contact.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
