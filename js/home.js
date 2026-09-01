@@ -10,10 +10,10 @@
   var IMG = ROOT + "assets/images/homepage/";
 
   function departmentHref(id) {
-    return ROOT + "pages/department-" + id + ".html";
+    return ROOT + "department/" + id + ".php";
   }
 
-  var APPOINTMENT_HREF = ROOT + "pages/book-appointment.html";
+  var APPOINTMENT_HREF = ROOT + "pages/contact.php";
 
   /* ======================================================================
      HERO — department search
@@ -152,6 +152,8 @@
     var cardHost = document.querySelector("[data-dept-card]");
     var prevBtn = document.querySelector("[data-dept-prev]");
     var nextBtn = document.querySelector("[data-dept-next]");
+    var cardPrevBtn = document.querySelector("[data-dept-card-prev]");
+    var cardNextBtn = document.querySelector("[data-dept-card-next]");
     if (!track || !cardHost) return;
 
     var departments = [
@@ -417,25 +419,100 @@
       renderCard();
     });
 
-    /* ---- Horizontal scroll buttons ---- */
+    /* ---- Horizontal scroll & department slide navigation ---- */
+    function getActiveIndex() {
+      for (var i = 0; i < departments.length; i++) {
+        if (departments[i].id === activeId) return i;
+      }
+      return 0;
+    }
+
+    function selectDepartmentByIndex(index) {
+      if (index < 0 || index >= departments.length) return;
+      activeId = departments[index].id;
+      syncActivePill();
+      renderCard();
+      var activePill = track.querySelector('.is-active');
+      if (activePill && typeof activePill.scrollIntoView === 'function') {
+        activePill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+      syncScrollButtons();
+    }
+
     function syncScrollButtons() {
-      if (prevBtn) prevBtn.disabled = track.scrollLeft <= 0;
+      var activeIdx = getActiveIndex();
+      var isFirst = activeIdx <= 0;
+      var isLast = activeIdx >= departments.length - 1;
+
+      if (prevBtn) prevBtn.disabled = isFirst && track.scrollLeft <= 0;
       if (nextBtn) {
-        nextBtn.disabled =
+        nextBtn.disabled = isLast &&
           track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
       }
+      if (cardPrevBtn) cardPrevBtn.disabled = isFirst;
+      if (cardNextBtn) cardNextBtn.disabled = isLast;
     }
 
     if (prevBtn) {
       prevBtn.addEventListener("click", function () {
-        track.scrollBy({ left: -260, behavior: "smooth" });
+        var idx = getActiveIndex();
+        if (idx > 0) {
+          selectDepartmentByIndex(idx - 1);
+        } else {
+          track.scrollBy({ left: -220, behavior: "smooth" });
+        }
       });
     }
+
     if (nextBtn) {
       nextBtn.addEventListener("click", function () {
-        track.scrollBy({ left: 260, behavior: "smooth" });
+        var idx = getActiveIndex();
+        if (idx < departments.length - 1) {
+          selectDepartmentByIndex(idx + 1);
+        } else {
+          track.scrollBy({ left: 220, behavior: "smooth" });
+        }
       });
     }
+
+    if (cardPrevBtn) {
+      cardPrevBtn.addEventListener("click", function () {
+        var idx = getActiveIndex();
+        if (idx > 0) selectDepartmentByIndex(idx - 1);
+      });
+    }
+
+    if (cardNextBtn) {
+      cardNextBtn.addEventListener("click", function () {
+        var idx = getActiveIndex();
+        if (idx < departments.length - 1) selectDepartmentByIndex(idx + 1);
+      });
+    }
+
+    /* Mobile Touch Swipe navigation on Department Card */
+    var touchStartX = 0;
+    var touchEndX = 0;
+    cardHost.addEventListener("touchstart", function (e) {
+      if (e.changedTouches && e.changedTouches.length) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+
+    cardHost.addEventListener("touchend", function (e) {
+      if (e.changedTouches && e.changedTouches.length) {
+        touchEndX = e.changedTouches[0].screenX;
+        var diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > 40) {
+          var idx = getActiveIndex();
+          if (diffX < 0 && idx < departments.length - 1) {
+            selectDepartmentByIndex(idx + 1);
+          } else if (diffX > 0 && idx > 0) {
+            selectDepartmentByIndex(idx - 1);
+          }
+        }
+      }
+    }, { passive: true });
+
     track.addEventListener("scroll", syncScrollButtons, { passive: true });
     window.addEventListener("resize", syncScrollButtons);
 

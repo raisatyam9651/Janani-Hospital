@@ -14,6 +14,36 @@
             Providing exceptional healthcare services with compassion and cutting-edge technology. Your health and
             wellbeing is our priority.
           </p>
+
+          <div class="footer-socials">
+            <h5 class="footer-socials__title">Connect With Us</h5>
+            <div class="footer-socials__links">
+              <a href="https://share.google/TYVpyruTB0YLOQU1o" target="_blank" rel="noopener" class="social-btn social-btn--google" title="Google Business Profile">
+                <svg class="icon"><use href="#i-google"></use></svg>
+                <span>Google</span>
+              </a>
+              <a href="https://www.instagram.com/janani_hospitalbijapur?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="social-btn social-btn--instagram" title="Instagram Page">
+                <svg class="icon"><use href="#i-instagram"></use></svg>
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/jananihospitalbijapur" target="_blank" rel="noopener" class="social-btn social-btn--facebook" title="Facebook Page">
+                <svg class="icon"><use href="#i-facebook"></use></svg>
+                <span>Facebook</span>
+              </a>
+              <a href="https://www.threads.com/@janani_hospitalbijapur" target="_blank" rel="noopener" class="social-btn social-btn--threads" title="Threads Page">
+                <svg class="icon"><use href="#i-threads"></use></svg>
+                <span>Threads</span>
+              </a>
+              <a href="https://youtube.com/@jananihospital4947?si=ABTz9qXiTl4paqH_" target="_blank" rel="noopener" class="social-btn social-btn--youtube" title="Janani Hospital YouTube Channel">
+                <svg class="icon"><use href="#i-youtube"></use></svg>
+                <span>Janani Hospital</span>
+              </a>
+              <a href="https://youtube.com/@drhampangoudapatil?si=qFYEm97aywMGXQ-O" target="_blank" rel="noopener" class="social-btn social-btn--youtube" title="Dr. HampanGouda Patil YouTube Channel">
+                <svg class="icon"><use href="#i-youtube"></use></svg>
+                <span>Dr. HampanGouda Patil</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -81,85 +111,40 @@
     </div>
   </footer>
 
-  <div id="appointmentModal" class="modal-overlay" style="display: none;">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeAppointmentModal()">&times;</button>
-      <h3 class="modal-title">Book Appointment</h3>
-      <form class="contact-form" action="https://app.formester.com/forms/ZU90MDpYm/submissions" method="POST">
-        <input type="hidden" name="form_type" value="appointment_popup">
-        <div style="margin-bottom: 1rem;">
-          <label for="modal-name" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
-          <input type="text" id="modal-name" name="name" required class="form-control" placeholder="Enter your full name">
-        </div>
-        <div style="margin-bottom: 1rem;">
-          <label for="modal-phone" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number *</label>
-          <input type="tel" id="modal-phone" name="phone" required class="form-control" placeholder="Enter your phone number">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-          <label for="modal-message" class="form-label" style="display:block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
-          <textarea id="modal-message" name="message" rows="3" class="form-control" placeholder="Any specific details?"></textarea>
-        </div>
-        <button type="submit" class="form-submit" style="width: 100%;">
-          <span>Submit Request</span>
-        </button>
-      </form>
+  <!-- Floating Footer Bar -->
+  <div class="floating-footer" id="floatingFooter">
+    <div class="floating-footer__inner">
+      <a href="tel:+917090831208" class="floating-footer__item floating-footer__item--call">
+        <span class="floating-footer__icon-box">
+          <svg class="icon"><use href="#i-phone"></use></svg>
+        </span>
+        <span class="floating-footer__text">
+          <span class="floating-footer__title">Call Emergency</span>
+          <span class="floating-footer__sub">+91 70908 31208</span>
+        </span>
+      </a>
+
+      <a href="https://wa.me/917090831208" target="_blank" rel="noopener" class="floating-footer__item floating-footer__item--whatsapp">
+        <span class="floating-footer__icon-box">
+          <svg class="icon"><use href="#i-whatsapp"></use></svg>
+        </span>
+        <span class="floating-footer__text">
+          <span class="floating-footer__title">WhatsApp</span>
+          <span class="floating-footer__sub">Chat 24/7</span>
+        </span>
+      </a>
+
+      <a href="/pages/contact.php" class="floating-footer__item floating-footer__item--book">
+        <span class="floating-footer__icon-box">
+          <svg class="icon"><use href="#i-calendar"></use></svg>
+        </span>
+        <span class="floating-footer__text">
+          <span class="floating-footer__title">Book Appointment</span>
+          <span class="floating-footer__sub">Instant Slot</span>
+        </span>
+      </a>
     </div>
   </div>
-
-  <style>
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content {
-      background: #fff;
-      padding: 2.5rem;
-      border-radius: var(--radius-lg, 12px);
-      width: 90%;
-      max-width: 450px;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    .modal-close {
-      position: absolute;
-      top: 1rem; right: 1rem;
-      background: none; border: none;
-      font-size: 1.8rem; cursor: pointer;
-      color: #666;
-    }
-    .modal-close:hover {
-      color: #000;
-    }
-    .modal-title {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--teal-700, #0f766e);
-    }
-  </style>
-
-  <script>
-    function openAppointmentModal(e) {
-      if(e) e.preventDefault();
-      document.getElementById('appointmentModal').style.display = 'flex';
-    }
-    function closeAppointmentModal() {
-      document.getElementById('appointmentModal').style.display = 'none';
-    }
-    // Close when clicking outside
-    window.addEventListener('click', function(e) {
-      const modal = document.getElementById('appointmentModal');
-      if (e.target === modal) {
-        closeAppointmentModal();
-      }
-    });
-  </script>
 
   <script src="/js/icons.js"></script>
   <script src="/js/layout.js"></script>

@@ -46,12 +46,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </div>
 
         <div class="contact-quick">
-          <div class="quick-card q-teal" data-reveal="up-lg" data-reveal-delay="0" style="cursor: pointer;" onclick="openAppointmentModal(event)">
+          <a href="#contact-form" class="quick-card q-teal" data-reveal="up-lg" data-reveal-delay="0">
             <div class="quick-card__icon"><svg class="icon"><use href="#i-calendar"></use></svg></div>
             <h3 class="quick-card__title">Book Appointment</h3>
             <p class="quick-card__text">Schedule a consultation with our specialists</p>
             <div class="quick-card__rule"><span></span></div>
-          </div>
+          </a>
           <div class="quick-card q-red" data-reveal="up-lg" data-reveal-delay="100">
             <div class="quick-card__icon"><svg class="icon"><use href="#i-alert-triangle"></use></svg></div>
             <h3 class="quick-card__title">Emergency Care</h3>

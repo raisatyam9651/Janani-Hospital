@@ -54,23 +54,23 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </div>
 
         <div class="hero__services">
-          <a href="/pages/contact.php" class="hero-service">
+          <a href="/pages/doctors.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
-                    <use href="#i-home"></use>
+                    <use href="#i-user"></use>
                   </svg></span>
-                <span class="hero-service__title">Homecare</span>
+                <span class="hero-service__title">Know Your Doctor</span>
               </div>
             </div>
           </a>
-          <a href="/pages/contact.php" class="hero-service">
+          <a href="/pages/book-appointment.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
-                    <use href="#i-activity"></use>
+                    <use href="#i-calendar"></use>
                   </svg></span>
-                <span class="hero-service__title">Book a Test</span>
+                <span class="hero-service__title">Book an Appointment</span>
               </div>
             </div>
           </a>
@@ -121,8 +121,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
           </div>
         </div>
 
-        <!-- Active department card, rendered by js/home.js -->
-        <div class="dept-card-wrap" data-dept-card></div>
+        <!-- Active department card container with mid-section slide buttons -->
+        <div class="dept-card-container">
+          <button type="button" class="dept-card__nav-btn dept-card__nav-btn--prev" data-dept-card-prev aria-label="Previous department slide">
+            <svg class="icon">
+              <use href="#i-chevron-left"></use>
+            </svg>
+          </button>
+
+          <div class="dept-card-wrap" data-dept-card></div>
+
+          <button type="button" class="dept-card__nav-btn dept-card__nav-btn--next" data-dept-card-next aria-label="Next department slide">
+            <svg class="icon">
+              <use href="#i-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
