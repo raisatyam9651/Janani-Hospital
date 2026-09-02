@@ -67,7 +67,7 @@ ob_start();
   Waiting times in the outpatient department during peak hours, and the speed of discharge paperwork, are the two
   things patients tell us about most often. Both are being worked on with appointment scheduling and earlier
   preparation of discharge summaries. If your experience with us fell short, we would genuinely rather hear it &mdash;
-  our <a href="/pages/contact.php">contact page</a> reaches the administration directly.
+  our <a href="/pages/book-appointment.php">appointment page</a> reaches the administration directly.
 </p>
 
 <h2>Thank you</h2>

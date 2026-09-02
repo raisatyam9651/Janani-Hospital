@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </div>
             <p class="dept-hero__lede">Our General Medicine department provides comprehensive primary care, focusing on prevention, diagnosis, and treatment of a wide range of health issues.</p>
             <div class="dept-hero__actions">
-              <a href="/pages/contact.php" class="dept-hero__btn dept-hero__btn--primary">
+              <a href="/pages/book-appointment.php" class="dept-hero__btn dept-hero__btn--primary">
                 <svg class="icon"><use href="#i-calendar"></use></svg>
                 <span>Book Consultation</span>
               </a>
@@ -150,7 +150,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <div class="dept-service__body">
               <h3 class="dept-service__name dept-service__name--plain">Primary Care</h3>
               <p class="dept-service__desc">Comprehensive primary healthcare for all age groups.</p>
-              <a href="/pages/contact.php" class="dept-service__cta">
+              <a href="/pages/book-appointment.php" class="dept-service__cta">
                 <span>Book Consultation</span>
                 <svg class="icon"><use href="#i-arrow-right"></use></svg>
               </a>
@@ -163,7 +163,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <div class="dept-service__body">
               <h3 class="dept-service__name dept-service__name--plain">Health Checkups</h3>
               <p class="dept-service__desc">Preventive health screening packages for early detection.</p>
-              <a href="/pages/contact.php" class="dept-service__cta">
+              <a href="/pages/book-appointment.php" class="dept-service__cta">
                 <span>Book Consultation</span>
                 <svg class="icon"><use href="#i-arrow-right"></use></svg>
               </a>

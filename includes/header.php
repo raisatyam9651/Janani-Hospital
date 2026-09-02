@@ -233,7 +233,7 @@
                   <h4 class="nav-dropdown__title">Medical Departments</h4>
                   <p class="nav-dropdown__subtitle">All specialties in one place</p>
                 </div>
-                <a href="/pages/contact.php" class="nav-dropdown__cta">
+                <a href="/pages/book-appointment.php" class="nav-dropdown__cta">
                   <svg class="icon"><use href="#i-calendar"></use></svg>
                   <span>Book Now</span>
                 </a>
@@ -388,7 +388,7 @@
           </div>
 
         <a href="/blog/" class="nav-link" data-nav="blog">Blog</a>
-        <a href="/pages/contact.php" class="nav-link" data-nav="contact">Contact</a>
+        <a href="/pages/book-appointment.php" class="nav-link" data-nav="book-appointment">Book Appointment</a>
         </div>
 
         <div class="site-nav__cta">
@@ -403,7 +403,7 @@
             <span>WhatsApp</span>
           </a>
 
-          <a href="/pages/contact.php" class="btn-book">
+          <a href="/pages/book-appointment.php" class="btn-book">
             <svg class="icon btn-book__icon"><use href="#i-calendar"></use></svg>
             <span>Book Appointment</span>
           </a>
@@ -459,9 +459,9 @@
             <span class="mobile-link__icon mobile-link__icon--emerald"><svg class="icon"><use href="#i-activity"></use></svg></span>
             <span>Blog</span>
           </a>
-          <a href="/pages/contact.php" class="mobile-link" data-nav="contact">
-            <span class="mobile-link__icon mobile-link__icon--purple"><svg class="icon"><use href="#i-activity"></use></svg></span>
-            <span>Contact</span>
+          <a href="/pages/book-appointment.php" class="mobile-link" data-nav="book-appointment">
+            <span class="mobile-link__icon mobile-link__icon--purple"><svg class="icon"><use href="#i-calendar"></use></svg></span>
+            <span>Book Appointment</span>
           </a>
 
           <a href="tel:+917090831208" class="mobile-link mobile-link--emergency">
@@ -474,7 +474,7 @@
             <span>Chat on WhatsApp</span>
           </a>
 
-          <a href="/pages/contact.php" class="mobile-menu__cta">
+          <a href="/pages/book-appointment.php" class="mobile-menu__cta">
             <svg class="icon"><use href="#i-calendar"></use></svg>
             <span>Book Appointment</span>
           </a>

@@ -264,7 +264,7 @@ $BLOG_POSTS = [
     'links'        => [
       ['Critical Care & ICU', '/department/critical-care.php'],
       ['Patient Information', '/pages/patient-information.php'],
-      ['Contact Us', '/pages/contact.php'],
+      ['Book Appointment', '/pages/book-appointment.php'],
     ],
   ],
 

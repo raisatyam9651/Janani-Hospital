@@ -134,7 +134,7 @@
         </span>
       </a>
 
-      <a href="/pages/contact.php" class="floating-footer__item floating-footer__item--book">
+      <a href="/pages/book-appointment.php" class="floating-footer__item floating-footer__item--book">
         <span class="floating-footer__icon-box">
           <svg class="icon"><use href="#i-calendar"></use></svg>
         </span>

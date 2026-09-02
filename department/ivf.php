@@ -22,7 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </div>
             <p class="dept-hero__lede">Our IVF &amp; Fertility Center in Hyderabad provides compassionate, expert care with cutting-edge reproductive technologies to help couples fulfill their dream of parenthood. We specialize in personalized fertility treatments featuring high success rates and 24/7 support.</p>
             <div class="dept-hero__actions">
-              <a href="/pages/contact.php" class="dept-hero__btn dept-hero__btn--primary">
+              <a href="/pages/book-appointment.php" class="dept-hero__btn dept-hero__btn--primary">
                 <svg class="icon"><use href="#i-calendar"></use></svg>
                 <span>Book Consultation</span>
               </a>
@@ -179,7 +179,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               </div>
               </div>
               <div class="dept-rail__actions">
-                <a href="/pages/contact.php" class="dept-rail__btn dept-rail__btn--primary">
+                <a href="/pages/book-appointment.php" class="dept-rail__btn dept-rail__btn--primary">
                   <svg class="icon"><use href="#i-calendar"></use></svg>
                   <span>Book Consultation</span>
                 </a>
@@ -225,7 +225,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-more">+1 more</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -250,7 +250,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-proc">IUI with Ovulation Induction</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -276,7 +276,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-more">+1 more</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -302,7 +302,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-more">+1 more</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -328,7 +328,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-more">+1 more</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -354,7 +354,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <span class="dept-chip-more">+1 more</span>
                   </div>
                 </div>
-                <a href="/pages/contact.php" class="dept-service__cta">
+                <a href="/pages/book-appointment.php" class="dept-service__cta">
                   <span>Book Consultation</span>
                   <svg class="icon"><use href="#i-arrow-right"></use></svg>
                 </a>
@@ -534,7 +534,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <h3 class="dept-cta__title">Still have questions?</h3>
             <p class="dept-cta__lede">Our fertility experts are here to help you with personalized guidance.</p>
             <div class="dept-cta__actions">
-              <a href="/pages/contact.php" class="dept-cta__btn dept-cta__btn--primary">
+              <a href="/pages/book-appointment.php" class="dept-cta__btn dept-cta__btn--primary">
                 <svg class="icon"><use href="#i-calendar"></use></svg>
                 <span>Schedule Consultation</span>
               </a>

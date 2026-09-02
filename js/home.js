@@ -13,7 +13,7 @@
     return ROOT + "department/" + id + ".php";
   }
 
-  var APPOINTMENT_HREF = ROOT + "pages/contact.php";
+  var APPOINTMENT_HREF = ROOT + "pages/book-appointment.php";
 
   /* ======================================================================
      HERO — department search

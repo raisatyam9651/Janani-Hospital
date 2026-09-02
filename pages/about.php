@@ -19,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               Pioneering excellence in healthcare for over two decades with compassionate care and cutting-edge
               technology.
             </p>
-            <a href="/pages/contact.php" class="mk-btn mk-btn--teal">
+            <a href="/pages/book-appointment.php" class="mk-btn mk-btn--teal">
               <span>Book Appointment</span>
               <svg class="icon"><use href="#i-arrow-right"></use></svg>
             </a>
@@ -401,11 +401,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               </p>
 
               <div class="about-cta__actions">
-                <a href="/pages/contact.php" class="about-cta__btn about-cta__btn--light">
+                <a href="/pages/book-appointment.php" class="about-cta__btn about-cta__btn--light">
                   <svg class="icon"><use href="#i-clock"></use></svg>
                   <span>Book Appointment</span>
                 </a>
-                <a href="/pages/contact.php" class="about-cta__btn about-cta__btn--ghost">
+                <a href="/pages/book-appointment.php" class="about-cta__btn about-cta__btn--ghost">
                   <svg class="icon"><use href="#i-phone"></use></svg>
                   <span>Contact Us</span>
                 </a>

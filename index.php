@@ -74,7 +74,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               </div>
             </div>
           </a>
-          <a href="/pages/contact.php" class="hero-service">
+          <a href="/pages/book-appointment.php" class="hero-service">
             <div class="hero-service__row">
               <div class="hero-service__group">
                 <span class="hero-service__icon"><svg class="icon">
