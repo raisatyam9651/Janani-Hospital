@@ -94,11 +94,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
               <div class="appt-form__row">
                 <div class="appt-field">
                   <label for="service" class="appt-field__label">
-                    <svg class="icon"><use href="#i-activity"></use></svg> Select Department / Service <span class="required">*</span>
+                    <svg class="icon"><use href="#i-activity"></use></svg> Select Department / Service (Optional)
                   </label>
                   <div class="appt-select-wrap">
-                    <select id="service" name="service" required class="appt-input" data-service-select>
-                        <option value="">Choose Service</option>
+                    <select id="service" name="service" class="appt-input" data-service-select>
+                        <option value="">Choose Service (Optional)</option>
                         <option value="IVF &amp; Fertility">IVF &amp; Fertility</option>
                         <option value="OBG">Obstetrics &amp; Gynecology (OBG)</option>
                         <option value="Pediatrics">Pediatrics &amp; Child Health</option>
@@ -212,9 +212,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 </div>
                 <div class="appt-field">
                   <label for="email" class="appt-field__label">
-                    <svg class="icon"><use href="#i-mail"></use></svg> Email Address <span class="required">*</span>
+                    <svg class="icon"><use href="#i-mail"></use></svg> Email Address (Optional)
                   </label>
-                  <input type="email" id="email" name="email" required class="appt-input"
+                  <input type="email" id="email" name="email" class="appt-input"
                     placeholder="e.g. patient@example.com">
                 </div>
               </div>
