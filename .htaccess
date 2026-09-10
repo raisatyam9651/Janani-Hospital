@@ -7,6 +7,10 @@ DirectoryIndex index.php
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /+(.*)index\.php [NC]
 RewriteRule ^ %1 [R=301,L]
 
+# Custom rewrites for thank you and confirmed pages
+RewriteRule ^thank-you/?$ pages/thank-you.php [L]
+RewriteRule ^appointment-confirmed/?$ pages/appointment-confirmed.php [L]
+
 # Remove .php extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

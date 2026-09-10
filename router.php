@@ -8,6 +8,16 @@ if ($uri !== '/' && file_exists($filePath) && !is_dir($filePath)) {
     return false;
 }
 
+// Custom routes for Formester redirects
+if ($uri === '/thank-you') {
+    require __DIR__ . '/pages/thank-you.php';
+    return true;
+}
+if ($uri === '/appointment-confirmed') {
+    require __DIR__ . '/pages/appointment-confirmed.php';
+    return true;
+}
+
 // 2. If URL without extension maps to a .php file (e.g. /pages/book-appointment -> /pages/book-appointment.php)
 if (file_exists($filePath . '.php') && !is_dir($filePath . '.php')) {
     require $filePath . '.php';
